@@ -1,6 +1,20 @@
 import numpy as np
 
 def compute_prox_ssn(prox_wD, almvar, proxvar, PI):
+    
+    """
+    Evaluate the proximal mapping in Semi-Smooth Newton (SSN) mode.
+
+    Computes ALM's Lagrangian objective, Jacobian, and Hessian by applying 
+    the selected proximal rule (based on gamma) to each (i, j) pair.
+
+    Parameters:
+    - prox_wD: array of ⟨w, D_ij⟩ values
+    - almvar: current ALM state
+    - proxvar: object storing proximal variables
+    - PI: problem instance
+    """
+    
     # 1. Vectorized computation of w_Dij
     proxvar.w_Dij = prox_wD - almvar.lambd / almvar.sigma
 
@@ -88,9 +102,23 @@ def prox_largegamma_ssn(idx, w_Dij, D_ij, almvar, proxvar, PI):
         proxvar.Lag_obj += 1.0
         proxvar.Lag_H[np.diag_indices(n)] += almvar.tau
 
-import numpy as np
+
 
 def compute_prox_ls(prox_wD, almvar, proxvar, PI):
+    
+    """
+    Evaluate the proximal objective function only (used in Line Search).
+
+    Parameters:
+    - prox_wD: ⟨w, D_ij⟩ values at candidate point
+    - almvar: ALM variable state
+    - proxvar: storage (not used here, but passed for interface consistency)
+    - PI: problem instance
+
+    Returns:
+    - total Lagrangian objective over all pairwise constraints
+    """
+    
     L = 0.0
     for idx in range(len(PI.K)):
         w_Dij = prox_wD[idx] - almvar.lambd[idx] / almvar.sigma

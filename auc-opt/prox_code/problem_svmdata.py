@@ -3,6 +3,29 @@ import numpy as np
 class DataSet:
     def __init__(self, m, n, num_classes, class_ratios, sep_distance,
                  feature_noise=0.0, flip_ratio=0.0, seed=1034):
+        
+        """
+    Synthetic binary classification dataset generator.
+
+    This class creates a linearly separable (or noisy) dataset in high-dimensional space,
+    with adjustable separation, feature noise, and label flipping.
+
+    Args:
+        m (int): Total number of samples.
+        n (int): Number of features (dimensionality).
+        num_classes (int): Number of classes (usually 2).
+        class_ratios (List[float]): Proportions for each class, must sum to 1.0.
+        sep_distance (float): Distance between class means (controls separability).
+        feature_noise (float, optional): Std. dev. of Gaussian noise added to features.
+        flip_ratio (float, optional): Proportion of labels to randomly flip (adds label noise).
+        seed (int, optional): Random seed for reproducibility.
+
+    Attributes:
+        X (ndarray): Feature matrix of shape (n, m).
+        y (ndarray): Label vector of shape (m,).
+        w_svm (ndarray): Ground truth separating hyperplane normal (unit vector).
+    """
+    
         assert abs(sum(class_ratios) - 1.0) < 1e-6, "Class ratios must sum to 1."
         np.random.seed(seed)
 

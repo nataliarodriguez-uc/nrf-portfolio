@@ -1,5 +1,6 @@
-numpy>=1.23
-scikit-learn>=1.2
-matplotlib>=3.5
+numpy
+scikit-learn
+matplotlib
 jupyter
 tqdm
+pandas

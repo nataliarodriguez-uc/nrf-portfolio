@@ -1,21 +1,24 @@
-# AUC Optimization through Scenario Reduction using Contrastrive Learning
+# 🔍 AUC Optimization via Scenario Reduction and Contrastive Sampling
 
 ## 📌 Overview
-This project implements and benchmarks Augmented Lagrangian methods for optimizing the AUC metric. It compares Prox-SGD-style optimization against LibAUC baselines, with implementations in Python.
+This project investigates **AUC optimization** using a **Proximal Stochastic Gradient Descent (Prox-SGD)** method based on **Augmented Lagrangian Methods (ALM)**. We compare this custom approach against baseline optimizers including PyTorch BCE and **LibAUC PESG**, with a focus on **sample efficiency** and **generalization performance**.
 
-## 🧠 Core Concepts
-- Pairwise ranking loss
-- AUC optimization
-- Scenario reduction using contrastive-style ideas
-- Augmented Lagrangian Method (ALM)
+Key highlights:
+- Uses **disjoint positive-negative pairs** in SGD updates.
+- Evaluates performance across **synthetic** and **CIFAR-10-based** datasets.
+- Provides automatic **AUC evaluation**, **ROC plotting**, and **comparison exports**.
 
-## 🛠️ Technologies
-- Python: PyTorch, LibAUC
-- Jupyter notebooks for result interpretation
+## Core Concepts
+- **Pairwise ranking loss**: Transforms AUC into an optimization-friendly form.
+- **Scenario reduction**: Efficient learning using a subset of meaningful pairs.
+- **Augmented Lagrangian Method**: Solves constrained pairwise optimization problems.
+- **Sample efficiency**: Competes with full-data methods using fewer training points.
 
-## 📂 Project Structure
-- `julia/`: Proximal algorithm and experiments in Julia
-- `python/`: Baseline models using LibAUC in PyTorch
-- `notebooks/`: Summary visualizations and run-throughs
-- `figures/`: AUC and loss plots
-- `results/`: Numerical outputs from experiments
+## Technologies
+- Python 3.9+
+- PyTorch (for Prox-SGD and LibAUC baselines)
+- torchvision (for feature extraction on CIFAR-10)
+- numpy, matplotlib, scikit-learn (for evaluation and plotting)
+- LibAUC (https://github.com/Optimization-AI/LibAUC)
+
+## 📁 Project Structure

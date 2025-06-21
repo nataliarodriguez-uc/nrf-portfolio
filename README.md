@@ -15,6 +15,9 @@ Hello! I'm a researcher focusing on optimization, machine learning and data scie
 
 ## Data Analytics Techniques
 
+- [Moodboard App Practice]
+  A Streamlit app practice exercise to visualize mood logs stored in Google Sheets.  
+
 - [Spark Large File Analysis](In Progress of Pushing Code)  
   PySpark pipeline for processing CSVs and aggregating business KPIs.
 
@@ -22,9 +25,8 @@ Hello! I'm a researcher focusing on optimization, machine learning and data scie
   SQL-based data queries + dashboard visualizations.
 
 ## Skills
-**Languages:** Julia, Python, SQL  
-**Tools:** JuMP, PyTorch, Pandas, Git, Spark, Tableau  
-**Specialties:** Optimization, AUC modeling, Reproducible Research
+**Languages:** Julia, Python, R, SQL 
+**Specialties:** Optimization, AUC modeling, Feature Selection, App Creations
 
  [LinkedIn](https://www.linkedin.com/in/natalia-a-rodríguez-figueroa-5362101a1/) | [Email](natalia_rodriguezuc@berkeley.edu)
 

@@ -2,6 +2,33 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 
 class ProblemInstance:
+    
+    """
+    Constructs a pairwise comparison problem instance from feature and label data.
+
+    This class supports different modes for using all data, a train/test split, or a random batch.
+    It computes the difference matrix D for all (i, j) such that y[i] > y[j], enabling AUC-type optimization.
+
+    Args:
+        X (ndarray): Feature matrix of shape (n_features, n_samples).
+        y (ndarray): Label vector of shape (n_samples,).
+        mode (str): 'full', 'train_test', or 'batch' to control how the data is used.
+        train_ratio (float): Ratio of data used for training in 'train_test' mode.
+        stratified (bool): Whether to preserve label ratios during train/test split.
+        batch_size (int, optional): Number of samples in batch mode (split evenly between classes).
+
+    Attributes:
+        X (ndarray): Features used in this problem instance (mode-dependent).
+        y (ndarray): Corresponding labels (mode-dependent).
+        X_train, X_test, y_train, y_test: Only set in 'train_test' mode.
+        K (list): List of index pairs (i, j) where y[i] > y[j].
+        D (ndarray): Pairwise difference matrix of shape (n_features, len(K)).
+        m (int): Number of samples in this instance.
+        n (int): Number of features.
+        w0 (ndarray): Randomly initialized primal variable (used in optimization).
+        lambda0 (ndarray): Zero-initialized dual variable for each pair in K.
+    """
+    
     def __init__(self, X, y, mode='full', train_ratio=0.7, stratified=True, batch_size=None):
         self.mode = mode
         self.train_ratio = train_ratio
