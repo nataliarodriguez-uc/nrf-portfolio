@@ -1,7 +1,7 @@
-# 🔍 AUC Optimization via Scenario Reduction and Contrastive Sampling
+# AUC Optimization via Scenario Reduction and Contrastive Sampling
 
 ## Overview
-This project investigates **AUC optimization** using a **Proximal Stochastic Gradient Descent (Prox-SGD)** method based on **Augmented Lagrangian Methods (ALM)**. We compare this custom approach against baseline optimizers including PyTorch BCE and **LibAUC PESG**, with a focus on **sample efficiency** and **generalization performance**.
+This project investigates **AUC optimization** using a **Proximal Stochastic Gradient Descent (Prox-SGD)** method based on **Augmented Lagrangian Methods (ALM)** and Proximal Algorithm execution on a surrogate model that approximates the indicator function in AUC metrics. We compare this custom approach against baseline optimizers including PyTorch BCE and **LibAUC PESG**, with a focus on **sample efficiency** and **generalization performance**.
 
 Key highlights:
 - Uses **disjoint positive-negative pairs** in SGD updates.
