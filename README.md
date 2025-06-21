@@ -1,5 +1,3 @@
-# nrf-portfolio
-
 # Natalia Rodriguez — GitHub Professional Portfolio
 
 Hello! I'm a researcher focusing on optimization, machine learning and data science methodologies. Below are snippets and demonstrations of the projects from my acamedic research work, professional internship roles, and external coursework applications.
