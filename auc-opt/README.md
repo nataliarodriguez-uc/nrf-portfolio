@@ -1,6 +1,6 @@
 # 🔍 AUC Optimization via Scenario Reduction and Contrastive Sampling
 
-## 📌 Overview
+## Overview
 This project investigates **AUC optimization** using a **Proximal Stochastic Gradient Descent (Prox-SGD)** method based on **Augmented Lagrangian Methods (ALM)**. We compare this custom approach against baseline optimizers including PyTorch BCE and **LibAUC PESG**, with a focus on **sample efficiency** and **generalization performance**.
 
 Key highlights:
@@ -16,9 +16,8 @@ Key highlights:
 
 ## Technologies
 - Python 3.9+
+- Proximal Algorithm, Augmented Lagrangian Method, Semi-smooth Newton Descent
 - PyTorch (for Prox-SGD and LibAUC baselines)
 - torchvision (for feature extraction on CIFAR-10)
 - numpy, matplotlib, scikit-learn (for evaluation and plotting)
 - LibAUC (https://github.com/Optimization-AI/LibAUC)
-
-## 📁 Project Structure
