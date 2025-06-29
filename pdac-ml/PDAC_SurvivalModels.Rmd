@@ -1,0 +1,386 @@
+---
+title: "PDAC_SurvivalModels"
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r}
+#install.packages("dplyr")
+#install.packages("tidyr")
+
+library(randomForestSRC)
+library(survival)
+library(survminer)
+library(prodlim)
+library(CoxR2)
+library(coxphf)
+library(dplyr)
+library(tidyr)
+```
+
+```{r}
+#Intersecting Data
+ICGCvariables_5stp_t = read.csv("ICGCvar1000_5stp_t.csv")
+Int1000_5stp_TCGA = intersect(colnames(TCGAvar1000_5stp),colnames(TCGAvar1000_5stp_t))
+Int1000_5stp_ICGC = intersect(colnames(ICGCvar1000_5stp),colnames(ICGCvariables_5stp_t))
+Int1000_5stp_ALL=intersect(Int1000_5stp_TCGA,Int1000_5stp_ICGC)
+
+ICGCvariables_10stp = ICGCresult741_10stp$optVariables[1:741]
+ICGCvariables_10stp_t = ICGCresult1000_10stp_t$optVariables[1:991]
+
+Int1000_10stp_TCGA = intersect(colnames(TCGAvar1000_10stp),colnames(TCGAvar1000_10stp_t))
+Int1000_10stp_ICGC = intersect(colnames(ICGCvariables_10stp),colnames(ICGCvariables_10stp_t))
+Int1000_10stp_ALL=intersect(Int1000_10stp_TCGA,Int1000_10stp_ICGC)
+```
+
+```{r}
+#Dataset for Survival Models
+TCGAfile = read.csv("/Users/nataliaa.rodriguez/ININ 4998 Pancreatic Cancer/TCGA_Preprocessed.csv")
+ICGCfile = read.csv("/Users/nataliaa.rodriguez/ININ 4998 Pancreatic Cancer/ICGC_Preprocessed.csv")
+TCGAfile_t = read.csv("/Users/nataliaa.rodriguez/ININ 4998 Pancreatic Cancer/TCGA_PreprocessedT.csv")
+ICGCfile_t = read.csv("/Users/nataliaa.rodriguez/ININ 4998 Pancreatic Cancer/ICGC_PreprocessedT.csv")
+```
+
+```{r}
+#Kap Meier Plot (1 Group)
+ICGC_survivaldf=data.frame("ISurvStatus"=ICGCfile[,"VS"],"ISurvTime"=ICGCfile_t[,"VS_Days"])
+ICGC_survivaldf
+
+ICGCfit <- survfit(Surv(ISurvTime,ISurvStatus) ~ 1 ,data = ICGC_survivaldf)
+ICGC_SurvSummary = summary(ICGCfit)
+ICGC_SurvSummary
+
+ICGC_SurvPlot= ggsurvplot(ICGCfit,data=ICGC_survivaldf)
+ICGC_SurvPlot
+png("ICGC_SurvPlot.png")
+ICGC_SurvPlot
+dev.off()
+```
+
+```{r}
+#Kap Meier Plot (1 Group)
+TCGAfile['OS'][TCGAfile["OS"]== "LIVING"] <- 0
+TCGAfile["OS"][TCGAfile["OS"]== "DECEASED"] <- 1
+
+TCGA_survivaldf=data.frame("TSurvStatus"=TCGAfile[,"OS"],"TSurvTime"=TCGAfile_t[,"OS_Months"])
+TCGA_survivaldf['TSurvStatus'] <- as.integer(unlist(TCGA_survivaldf['TSurvStatus']))
+TCGA_survivaldf
+
+TCGAfit <- survfit(Surv(TSurvTime,TSurvStatus) ~ 1 ,data = TCGA_survivaldf)
+TCGA_SurvSummary = summary(TCGAfit)
+TCGA_SurvSummary
+
+TCGA_SurvPlot= ggsurvplot(TCGAfit,data=TCGA_survivaldf)
+TCGA_SurvPlot
+png("TCGA_SurvPlot.png")
+TCGA_SurvPlot
+dev.off()
+```
+
+```{r}
+#Cox Proportional Regression for Intersection Between TCGA Time and Status - 5stp
+TCGA_Cox_5stp_df <- TCGAfile[,which(names(TCGAfile) %in% Int1000_5stp_TCGA)]
+TCGA_Cox_5stp_df
+TCGA_Cox_5stp_df$TSurvStatus <-TCGA_survivaldf[,"TSurvStatus"]
+TCGA_Cox_5stp_df$TSurvTime <-TCGA_survivaldf[,"TSurvTime"]
+TCGA_Cox_5stp_df
+
+TCGACoxfit_5stp <- coxph(Surv(TSurvTime,TSurvStatus) ~ C15orf48, data = TCGA_Cox_5stp_df)
+TCGA_CoxSurvSummary_5stp = summary(TCGACoxfit_5stp)
+coxr2(TCGACoxfit_5stp)
+
+TCGA_CoxPlot= ggsurvplot(TCGACoxfit_5stp, data= TCGA_Cox_5stp_df)
+TCGA_CoxPlot
+```
+
+```{r}
+#Cox Proportional Regression for Intersection Between ICGC Time and Status - 5stp
+ICGC_Cox_5stp_df <- ICGCfile[,which(names(ICGCfile) %in% Int1000_5stp_ICGC)]
+ICGC_Cox_5stp_df
+ICGC_Cox_5stp_df$ISurvStatus <-ICGC_survivaldf[,"ISurvStatus"]
+ICGC_Cox_5stp_df$ISurvTime <-ICGC_survivaldf[,"ISurvTime"]
+ICGC_Cox_5stp_df
+
+
+ICGCCoxfit_5stp <- coxph(Surv(ISurvTime,ISurvStatus) ~ ., data = ICGC_Cox_5stp_df)
+
+ICGC_CoxSurvSummary_5stp = summary(ICGCCoxfit_5stp)
+ICGC_CoxSurvSummary_5stp
+coxr2(ICGCCoxfit_5stp)
+
+#ICGC_CoxPlot= ggsurvplot(ICGCCoxfit,data=ICGC_Cox_5stp_df)
+#ICGC_CoxPlot
+```
+
+```{r}
+#Cox Proportional Regression for ICGC Time - 5stp
+ICGC_Cox_5stp_dft <- ICGCfile[,which(names(ICGCfile) %in% colnames(ICGCvariables_5stp_t))]
+ICGC_Cox_5stp_dft
+ICGC_Cox_5stp_dft$ISurvStatus <-ICGC_survivaldf[,"ISurvStatus"]
+ICGC_Cox_5stp_dft$ISurvTime <-ICGC_survivaldf[,"ISurvTime"]
+ICGC_Cox_5stp_dft
+
+
+ICGCCoxfit_5stpt <- coxph(Surv(ISurvTime,ISurvStatus) ~ ., data = ICGC_Cox_5stp_dft)
+
+ICGC_CoxSurvSummary_5stpt = summary(ICGCCoxfit_5stpt)
+ICGC_CoxSurvSummary_5stpt
+coxr2(ICGCCoxfit_5stpt)
+
+#ICGC_CoxPlot= ggsurvplot(ICGCCoxfit,data=ICGC_Cox_5stp_df)
+#ICGC_CoxPlot
+```
+
+```{r}
+#Cox Proportional Regression for TCGA Time - 5stp
+TCGA_Cox_5stp_dft <- TCGAfile[,which(names(TCGAfile) %in% colnames(TCGAvar1000_5stp_t))]
+TCGA_Cox_5stp_dft
+TCGA_Cox_5stp_dft$TSurvStatus <-TCGA_survivaldf[,"TSurvStatus"]
+TCGA_Cox_5stp_dft$TSurvTime <-TCGA_survivaldf[,"TSurvTime"]
+TCGA_Cox_5stp_dft
+
+TCGACoxfit_5stpt <- coxph(Surv(TSurvTime,TSurvStatus) ~ ., data = TCGA_Cox_5stp_dft)
+
+TCGA_CoxSurvSummary_5stpt = summary(TCGACoxfit_5stpt)
+TCGA_CoxSurvSummary_5stpt
+coxr2(TCGACoxfit_5stpt)
+
+#TCGA_CoxPlot= ggsurvplot(TCGACoxfit,data=TCGA_Cox_5stp_df)
+#TCGA_CoxPlot
+```
+```{r}
+#Cox Proportional Regression for ICGC Status - 5stp
+ICGC_Cox_5stp_dfs <- ICGCfile[,which(names(ICGCfile) %in% colnames(ICGCvar1000_5stp))]
+ICGC_Cox_5stp_dfs
+ICGC_Cox_5stp_dfs$ISurvStatus <-ICGC_survivaldf[,"ISurvStatus"]
+ICGC_Cox_5stp_dfs$ISurvTime <-ICGC_survivaldf[,"ISurvTime"]
+ICGC_Cox_5stp_dfs
+
+
+ICGCCoxfit_5stps <- coxph(Surv(ISurvTime,ISurvStatus) ~ ., data = ICGC_Cox_5stp_dfs)
+
+ICGC_CoxSurvSummary_5stps = summary(ICGCCoxfit_5stps)
+ICGC_CoxSurvSummary_5stps
+coxr2(ICGCCoxfit_5stps)
+
+#ICGC_CoxPlot= ggsurvplot(ICGCCoxfit,data=ICGC_Cox_5stp_df)
+#ICGC_CoxPlot
+```
+
+
+```{r}
+#Cox Proportional Regression for TCGA Status - 5stp
+TCGA_Cox_5stp_dfs <- TCGAfile[,which(names(TCGAfile) %in% colnames(TCGAvar1000_5stp))]
+TCGA_Cox_5stp_dfs$TSurvStatus <- TCGA_survivaldf[,"TSurvStatus"]
+TCGA_Cox_5stp_dfs$TSurvTime <- TCGA_survivaldf[,"TSurvTime"]
+TCGA_Cox_5stp_dfs
+
+TCGACoxfit_5stps <- coxph(Surv(TSurvTime,TSurvStatus) ~ ., data = TCGA_Cox_5stp_dfs)
+
+TCGA_CoxSurvSummary_5stps = summary(TCGACoxfit_5stps)
+TCGA_CoxSurvSummary_5stps
+
+#TCGA_CoxPlot= ggsurvplot(TCGACoxfit,data=TCGA_Cox_5stp_df)
+#TCGA_CoxPlot
+```
+```{r}
+TCGARSFfit_5stp <- rfsrc(Surv(TSurvTime,TSurvStatus) ~ ., data = TCGA_Cox_5stp_df, ntree = 1000, nodesize = 5, nsplit = 5, importance = TRUE)
+TCGARSFfit_5stp
+
+TCGA_VIMP = vimp(TCGARSFfit_5stp)$importance
+TCGA_VIMP = as.data.frame(TCGA_VIMP)
+colnames(TCGA_VIMP)[1] ="VIMP_Value"
+TCGA_VIMP = arrange(TCGA_VIMP, -VIMP_Value)
+TCGA_VIMP$VIMP_Value = 100*(TCGA_VIMP$VIMP_Value)
+TCGA_VIMP
+TCGA_VIMP20 <- top_n(TCGA_VIMP,20,VIMP_Value)
+TCGA_VIMP20
+
+jk.TCGARSFfit_5stp <- subsample(TCGARSFfit_5stp)
+  TCGARSF_VIMPPlot_5stp = pdf("TCGARSF_VIMP_5stp.pdf", width = 15, height = 20)
+  par(oma = c(0.5, 10, 0.5, 0.5))
+  par(cex.axis = 2.0, cex.lab = 2.0, cex.main = 2.0, mar = c(6.0,17,1,1), mgp = c(4, 1, 0))
+  TCGARSF_VIMP_5stp = plot (jk.TCGARSFfit_5stp, xlab = "Variable Importance (x 100)", cex = 1.2)
+  dev.off()
+```
+
+```{r}
+TCGAunion_col = union(colnames(TCGAvar1000_5stp),colnames(TCGAvar1000_5stp_t))
+TCGA_Cox_5stp_dfu <- TCGAfile[,which(names(TCGAfile) %in% TCGAunion_col)]
+TCGA_Cox_5stp_dfu
+TCGA_Cox_5stp_dfu$TSurvStatus <-TCGA_survivaldf[,"TSurvStatus"]
+TCGA_Cox_5stp_dfu$TSurvTime <-TCGA_survivaldf[,"TSurvTime"]
+TCGA_Cox_5stp_dfu
+
+TCGARSFfit_5stpu <- rfsrc(Surv(TSurvTime,TSurvStatus) ~ ., 
+                          data = TCGA_Cox_5stp_dfu, ntree = 1000, 
+                          nodesize = 5, nsplit = 5, importance = TRUE)
+
+TCGA_VIMP_u = vimp(TCGARSFfit_5stpu)$importance
+TCGA_VIMP_u = as.data.frame(TCGA_VIMP_u)
+colnames(TCGA_VIMP_u)[1] ="VIMP_Value"
+TCGA_VIMP_u = arrange(TCGA_VIMP_u, -VIMP_Value)
+TCGA_VIMP_u$VIMP_Value = 100*(TCGA_VIMP_u$VIMP_Value)
+TCGA_VIMP_u
+TCGA_VIMP_u20 <- top_n(TCGA_VIMP_u,20,VIMP_Value)
+TCGA_VIMP_u20
+
+
+TCGARSFfit_5stpu
+
+jk.TCGARSFfit_5stpu <- subsample(TCGARSFfit_5stpu)
+  TCGARSF_VIMPPlot_5stpu = pdf("TCGARSF_VIMP_5stpu.pdf", width = 15, height = 20)
+  par(oma = c(0.5, 10, 0.5, 0.5))
+  par(cex.axis = 2.0, cex.lab = 2.0, cex.main = 2.0, mar = c(6.0,17,1,1), mgp = c(4, 1, 0))
+  TCGARSF_VIMP_5stpu = plot (jk.TCGARSFfit_5stpu, xlab = "Variable Importance (x 100)", cex = 1.2)
+  dev.off()
+```
+
+```{r}
+TCGARSFfit_5stps <- rfsrc(Surv(TSurvTime,TSurvStatus) ~ ., data = TCGA_Cox_5stp_dfs, ntree = 1000, nodesize = 5, nsplit = 5, importance = TRUE)
+TCGARSFfit_5stps
+
+TCGA_VIMP_s = vimp(TCGARSFfit_5stps)$importance
+TCGA_VIMP_s = as.data.frame(TCGA_VIMP_s)
+colnames(TCGA_VIMP_s)[1] ="VIMP_Value"
+TCGA_VIMP_s = arrange(TCGA_VIMP_s, -VIMP_Value)
+TCGA_VIMP_s$VIMP_Value = 100*(TCGA_VIMP_s$VIMP_Value)
+TCGA_VIMP_s
+TCGA_VIMP_s20 <- top_n(TCGA_VIMP_s,20,VIMP_Value)
+TCGA_VIMP_s20
+
+jk.TCGARSFfit_5stps <- subsample(TCGARSFfit_5stps)
+  TCGARSF_VIMPPlot_5stps = pdf("TCGARSF_VIMP_5stps.pdf", width = 15, height = 20)
+  par(oma = c(0.5, 10, 0.5, 0.5))
+  par(cex.axis = 2.0, cex.lab = 2.0, cex.main = 2.0, mar = c(6.0,17,1,1), mgp = c(4, 1, 0))
+  TCGARSF_VIMP_5stps = plot (jk.TCGARSFfit_5stps, xlab = "Variable Importance (x 100)", cex = 1.2)
+  dev.off()
+```
+
+```{r}
+TCGARSFfit_5stpt <- rfsrc(Surv(TSurvTime,TSurvStatus) ~ ., data = TCGA_Cox_5stp_dft, ntree = 1000, nodesize = 5, nsplit = 5, importance = TRUE)
+TCGARSFfit_5stpt
+
+TCGA_VIMP_t = vimp(TCGARSFfit_5stpt)$importance
+TCGA_VIMP_t = as.data.frame(TCGA_VIMP_t)
+colnames(TCGA_VIMP_t)[1] ="VIMP_Value"
+TCGA_VIMP_t = arrange(TCGA_VIMP_t, -VIMP_Value)
+TCGA_VIMP_t$VIMP_Value = 100*(TCGA_VIMP_t$VIMP_Value)
+TCGA_VIMP_t
+TCGA_VIMP_t20 <- top_n(TCGA_VIMP_t,20,VIMP_Value)
+TCGA_VIMP_t20
+
+jk.TCGARSFfit_5stpt <- subsample(TCGARSFfit_5stpt)
+  TCGARSF_VIMPPlot_5stpt = pdf("TCGARSF_VIMP_5stpt.pdf", width = 15, height = 20)
+  par(oma = c(0.5, 10, 0.5, 0.5))
+  par(cex.axis = 2.0, cex.lab = 2.0, cex.main = 2.0, mar = c(6.0,17,1,1), mgp = c(4, 1, 0))
+  TCGARSF_VIMP_5stpt = plot (jk.TCGARSFfit_5stpt, xlab = "Variable Importance (x 100)", cex = 1.2)
+  dev.off()
+```
+
+```{r}
+ICGCRSFfit_5stp <- rfsrc(Surv(ISurvTime,ISurvStatus) ~ ., data = ICGC_Cox_5stp_df, ntree = 1000, nodesize = 5, nsplit = 5, importance = TRUE)
+ICGCRSFfit_5stp
+
+ICGC_VIMP = vimp(ICGCRSFfit_5stp)$importance
+ICGC_VIMP = as.data.frame(ICGC_VIMP)
+colnames(ICGC_VIMP)[1] ="VIMP_Value"
+ICGC_VIMP = arrange(ICGC_VIMP, -VIMP_Value)
+ICGC_VIMP$VIMP_Value = 100*(ICGC_VIMP$VIMP_Value)
+ICGC_VIMP
+ICGC_VIMP20 <- top_n(ICGC_VIMP,20,VIMP_Value)
+ICGC_VIMP20
+
+VIMPPlot_order=plot.subsample(subsample(ICGCRSFfit_5stp))
+
+jk.ICGCRSFfit_5stp <- subsample(ICGCRSFfit_5stp)
+ICGCRSF_VIMPPlot_5stp = pdf("ICGCRSF_VIMP_5stp.pdf", width = 15, height = 20)
+  par(oma = c(0.5, 10, 0.5, 0.5))
+  par(cex.axis = 2.0, cex.lab = 2.0, cex.main = 2.0, mar = c(6.0,17,1,1), mgp = c(4, 1, 0))
+  ICGCRSF_VIMP_5stp = plot (jk.ICGCRSFfit_5stp, xlab = "Variable Importance (x 100)", cex = 1.2)
+  dev.off()
+```
+
+```{r}
+ICGCRSFfit_5stps <- rfsrc(Surv(ISurvTime,ISurvStatus) ~ ., data = ICGC_Cox_5stp_dfs, ntree = 1000, nodesize = 5, nsplit = 5, importance = TRUE)
+ICGCRSFfit_5stps
+
+ICGC_VIMP_s = vimp(ICGCRSFfit_5stps)$importance
+ICGC_VIMP_s = as.data.frame(ICGC_VIMP_s)
+colnames(ICGC_VIMP_s)[1] ="VIMP_Value"
+ICGC_VIMP_s = arrange(ICGC_VIMP_s, -VIMP_Value)
+ICGC_VIMP_s$VIMP_Value = 100*(ICGC_VIMP_s$VIMP_Value)
+ICGC_VIMP_s
+ICGC_VIMP_s20 <- top_n(ICGC_VIMP_s,20,VIMP_Value)
+ICGC_VIMP_s20
+
+jk.ICGCRSFfit_5stps <- subsample(ICGCRSFfit_5stps)
+ICGCRSF_VIMPPlot_5stps = pdf("ICGCRSF_VIMP_5stps.pdf", width = 15, height = 20)
+  par(oma = c(0.5, 10, 0.5, 0.5))
+  par(cex.axis = 2.0, cex.lab = 2.0, cex.main = 2.0, mar = c(6.0,17,1,1), mgp = c(4, 1, 0))
+  ICGCRSF_VIMP_5stps = plot (jk.ICGCRSFfit_5stps, xlab = "Variable Importance (x 100)", cex = 1.2)
+  dev.off()
+```
+
+```{r}
+ICGCRSFfit_5stpt <- rfsrc(Surv(ISurvTime,ISurvStatus) ~ ., data = ICGC_Cox_5stp_dft, ntree = 1000, nodesize = 5, nsplit = 5, importance = TRUE)
+ICGCRSFfit_5stpt
+
+ICGC_VIMP_t = vimp(ICGCRSFfit_5stpt)$importance
+ICGC_VIMP_t = as.data.frame(ICGC_VIMP_t)
+colnames(ICGC_VIMP_t)[1] ="VIMP_Value"
+ICGC_VIMP_t = arrange(ICGC_VIMP_t, -VIMP_Value)
+ICGC_VIMP_t$VIMP_Value = 100*(ICGC_VIMP_t$VIMP_Value)
+ICGC_VIMP_t
+ICGC_VIMP_t20 <- top_n(ICGC_VIMP_t,20,VIMP_Value)
+ICGC_VIMP_t20
+
+jk.ICGCRSFfit_5stpt <- subsample(ICGCRSFfit_5stpt)
+ICGCRSF_VIMPPlot_5stpt = pdf("ICGCRSF_VIMP_5stpt.pdf", width = 15, height = 20)
+  par(oma = c(0.5, 10, 0.5, 0.5))
+  par(cex.axis = 2.0, cex.lab = 2.0, cex.main = 2.0, mar = c(6.0,17,1,1), mgp = c(4, 1, 0))
+  ICGCRSF_VIMP_5stpt = plot (jk.ICGCRSFfit_5stpt, xlab = "Variable Importance (x 100)", cex = 1.2)
+  dev.off()
+```
+
+```{r}
+ICGCunion_col = union(colnames(ICGCvar1000_5stp),colnames(ICGCvariables_5stp_t))
+ICGC_Cox_5stp_dfu <- ICGCfile[,which(names(ICGCfile) %in% ICGCunion_col)]
+ICGC_Cox_5stp_dfu
+ICGC_Cox_5stp_dfu$ISurvStatus <-ICGC_survivaldf[,"ISurvStatus"]
+ICGC_Cox_5stp_dfu$ISurvTime <-ICGC_survivaldf[,"ISurvTime"]
+ICGC_Cox_5stp_dfu
+
+ICGCRSFfit_5stpu <- rfsrc(Surv(ISurvTime,ISurvStatus) ~ ., data = ICGC_Cox_5stp_dfu, ntree = 1000, nodesize = 5, nsplit = 5, importance = TRUE,chf)
+ICGCRSFfit_5stpu
+
+ICGC_VIMP_u = vimp(ICGCRSFfit_5stpu)$importance
+ICGC_VIMP_u = as.data.frame(ICGC_VIMP_u)
+colnames(ICGC_VIMP_u)[1] ="VIMP_Value"
+ICGC_VIMP_u = arrange(ICGC_VIMP_u, -VIMP_Value)
+ICGC_VIMP_u$VIMP_Value = 100*(ICGC_VIMP_u$VIMP_Value)
+ICGC_VIMP_u
+ICGC_VIMP_u20 <- top_n(ICGC_VIMP_u,20,VIMP_Value)
+ICGC_VIMP_u20
+
+jk.ICGCRSFfit_5stpu <- subsample(ICGCRSFfit_5stpu)
+  ICGCRSF_VIMPPlot_5stpu = pdf("ICGCRSF_VIMP_5stpu.pdf", width = 15, height = 20)
+  par(oma = c(0.5, 10, 0.5, 0.5))
+  par(cex.axis = 2.0, cex.lab = 2.0, cex.main = 2.0, mar = c(6.0,17,1,1), mgp = c(4, 1, 0))
+  ICGCRSF_VIMP_5stpu = plot (jk.ICGCRSFfit_5stpu, xlab = "Variable Importance (x 100)", cex = 1.2)
+  dev.off()
+```
+
+```{r}
+#Save Tables
+write.csv(ICGC_VIMP_u20, "ICGC_VIMP_u20.csv") 
+write.csv(ICGC_VIMP_s20, "ICGC_VIMP_s20.csv") 
+write.csv(ICGC_VIMP_t20, "ICGC_VIMP_t20.csv") 
+write.csv(ICGC_VIMP20, "ICGC_VIMP20.csv") 
+
+write.csv(TCGA_VIMP_u20, "TCGA_VIMP_u20.csv") 
+write.csv(TCGA_VIMP_s20, "TCGA_VIMP_s20.csv") 
+write.csv(TCGA_VIMP_t20, "TCGA_VIMP_t20.csv") 
+write.csv(TCGA_VIMP20, "TCGA_VIMP20.csv") 
+
+```

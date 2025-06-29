@@ -1,0 +1,215 @@
+---
+title: "Enrichment_RfeaturesTime"
+output: html_document
+---
+
+#Libraries
+```{r}
+BiocManager::install("org.Hs.eg.db",character.only=TRUE)
+BiocManager::install()
+BiocManager::install("clusterProfiler")
+BiocManager::install("GO.db")
+install.packages("ggnewscale")
+install.packages("tidygraph")
+
+library("tidygraph")
+library("GO.db")
+library("clusterProfiler")
+library("enrichplot")
+library("ggplot2")
+library("ggnewscale")
+```
+
+#Enrichment Analysis for Intersection of ICGC/TCGA with Step=5 (Time+Status Features)
+```{r}
+#Intersecting Data
+ICGCvariables_5stp_t = read.csv("ICGCvar1000_5stp_t.csv")
+Int1000_5stp_TCGA = intersect(colnames(TCGAvar1000_5stp),colnames(TCGAvar1000_5stp_t))
+Int1000_5stp_ICGC = intersect(colnames(ICGCvar1000_5stp),colnames(ICGCvariables_5stp_t))
+Int1000_5stp_ALL=intersect(Int1000_5stp_TCGA,Int1000_5stp_ICGC)
+Int1000_5stp_ALL
+
+Int1000_5stp1 = intersect(colnames(TCGAvar1000_5stp_t),colnames(ICGCvariables_5stp_t))
+Int1000_5stp1
+Int1000_5stp2 = intersect(colnames(TCGAvar1000_5stp),colnames(ICGCvar1000_5stp))
+Int1000_5stp2
+
+ICGCvariables_10stp = ICGCresult741_10stp$optVariables[1:741]
+ICGCvariables_10stp_t = ICGCresult1000_10stp_t$optVariables[1:991]
+
+Int1000_10stp_TCGA = intersect(colnames(TCGAvar1000_10stp),colnames(TCGAvar1000_10stp_t))
+Int1000_10stp_ICGC = intersect(colnames(ICGCvariables_10stp),colnames(ICGCvariables_10stp_t))
+Int1000_10stp_ALL=intersect(Int1000_10stp_TCGA,Int1000_10stp_ICGC)
+Int1000_10stp_ALL
+```
+
+```{r}
+#List of Genes
+entree_5stp_TCGA <- bitr(Int1000_5stp_TCGA, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = "org.Hs.eg.db")
+
+#Enrichment in KEGG
+ea_5stpKEGG_TCGA <- enrichKEGG(entree_5stp_TCGA$ENTREZID, pvalueCutoff=1)
+result_5stpKEGG_TCGA= as.data.frame(ea_5stpKEGG_TCGA)
+result_5stpKEGG_TCGA
+write.csv(result_5stpKEGG_TCGA,file="EnrichmentAnalysis_KEGG_5stp_TCGA.csv",row.names=FALSE)
+
+#Enrichment in MP
+ea_5stpMP_TCGA <- enrichGO(entree_5stp_TCGA$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "MF", pvalueCutoff=1)
+result_5stpMP_TCGA= as.data.frame(ea_5stpMP_TCGA)
+result_5stpMP_TCGA
+write.csv(result_5stpMP_TCGA,file="EnrichmentAnalysis_MP_5stp_TCGA.csv",row.names=FALSE)
+
+#Enrichment in BP
+ea_5stpBP_TCGA <- enrichGO(entree_5stp_TCGA$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "BP", pvalueCutoff=1)
+result_5stpBP_TCGA= as.data.frame(ea_5stpBP_TCGA)
+result_5stpBP_TCGA
+write.csv(result_5stpBP_TCGA,file="EnrichmentAnalysis_BP_5stp_TCGA.csv",row.names=FALSE)
+
+#Enrichment in CC
+ea_5stpCC_TCGA <- enrichGO(entree_5stp_TCGA$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "CC", pvalueCutoff=1)
+result_5stpCC_TCGA= as.data.frame(ea_5stpCC_TCGA)
+result_5stpCC_TCGA
+write.csv(result_5stpCC_TCGA,file="EnrichmentAnalysis_CC_5stp_TCGA.csv",row.names=FALSE)
+
+DotPlot_KEGG_5stp_TCGA = dotplot(ea_5stpKEGG_TCGA, title = "Enrichment_Results_KEGG_5stp_TCGA", font.size = 12)
+DotPlot_KEGG_5stp_TCGA
+pairwise_result = pairwise_termsim(ea_5stpKEGG_TCGA) 
+EMapPlot_KEGG_5stp_TCGA = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_KEGG_5stp_TCGA")
+EMapPlot_KEGG_5stp_TCGA
+
+png("EMapPlot_KEGG_5stp_TCGA.png")
+EMapPlot_KEGG_5stp_TCGA
+dev.off()
+
+png("DotPlot_KEGG_5stp_TCGA.png")
+DotPlot_KEGG_5stp_TCGA
+dev.off()
+```
+
+```{r}
+#List of Genes
+entree_5stp_ICGC <- bitr(Int1000_5stp_ICGC, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = "org.Hs.eg.db")
+
+#Enrichment in KEGG
+ea_5stpKEGG_ICGC <- enrichKEGG(entree_5stp_ICGC$ENTREZID, pvalueCutoff=1)
+result_5stpKEGG_ICGC= as.data.frame(ea_5stpKEGG_ICGC)
+result_5stpKEGG_ICGC
+write.csv(result_5stpKEGG_ICGC,file="EnrichmentAnalysis_KEGG_5stp_ICGC.csv",row.names=FALSE)
+
+#Enrichment in MP
+ea_5stpMP_ICGC <- enrichGO(entree_5stp_ICGC$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "MF", pvalueCutoff=1)
+result_5stpMP_ICGC= as.data.frame(ea_5stpMP_ICGC)
+result_5stpMP_ICGC
+write.csv(result_5stpMP_ICGC,file="EnrichmentAnalysis_MP_5stp_ICGC.csv",row.names=FALSE)
+
+#Enrichment in BP
+ea_5stpBP_ICGC <- enrichGO(entree_5stp_ICGC$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "BP", pvalueCutoff=1)
+result_5stpBP_ICGC= as.data.frame(ea_5stpBP_ICGC)
+result_5stpBP_ICGC
+write.csv(result_5stpBP_ICGC,file="EnrichmentAnalysis_BP_5stp_ICGC.csv",row.names=FALSE)
+
+#Enrichment in CC
+ea_5stpCC_ICGC <- enrichGO(entree_5stp_ICGC$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "CC", pvalueCutoff=1)
+result_5stpCC_ICGC= as.data.frame(ea_5stpCC_ICGC)
+result_5stpCC_ICGC
+write.csv(result_5stpCC_ICGC,file="EnrichmentAnalysis_CC_5stp_ICGC.csv",row.names=FALSE)
+
+DotPlot_KEGG_5stp_ICGC = dotplot(ea_5stpKEGG_ICGC, title = "Enrichment_Results_KEGG_5stp_ICGC", font.size = 12)
+DotPlot_KEGG_5stp_ICGC
+pairwise_result = pairwise_termsim(ea_5stpKEGG_ICGC) 
+EMapPlot_KEGG_5stp_ICGC = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_KEGG_5stp_ICGC")
+EMapPlot_KEGG_5stp_ICGC
+
+png("EMapPlot_KEGG_5stp_ICGC.png")
+EMapPlot_KEGG_5stp_ICGC
+dev.off()
+
+png("DotPlot_KEGG_5stp_ICGC.png")
+DotPlot_KEGG_5stp_ICGC
+dev.off()
+```
+
+```{r}
+#List of Genes
+entree_10stp_TCGA <- bitr(Int1000_10stp_TCGA, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = "org.Hs.eg.db")
+
+#Enrichment in KEGG
+ea_10stpKEGG_TCGA <- enrichKEGG(entree_10stp_TCGA$ENTREZID, pvalueCutoff=1)
+result_10stpKEGG_TCGA= as.data.frame(ea_10stpKEGG_TCGA)
+result_10stpKEGG_TCGA
+write.csv(result_10stpKEGG_TCGA,file="EnrichmentAnalysis_KEGG_10stp_TCGA.csv",row.names=FALSE)
+
+#Enrichment in MP
+ea_10stpMP_TCGA <- enrichGO(entree_10stp_TCGA$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "MF", pvalueCutoff=1)
+result_10stpMP_TCGA= as.data.frame(ea_10stpMP_TCGA)
+result_10stpMP_TCGA
+write.csv(result_10stpMP_TCGA,file="EnrichmentAnalysis_MP_10stp_TCGA.csv",row.names=FALSE)
+
+#Enrichment in BP
+ea_10stpBP_TCGA <- enrichGO(entree_10stp_TCGA$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "BP", pvalueCutoff=1)
+result_10stpBP_TCGA= as.data.frame(ea_10stpBP_TCGA)
+result_10stpBP_TCGA
+write.csv(result_10stpBP_TCGA,file="EnrichmentAnalysis_BP_10stp_TCGA.csv",row.names=FALSE)
+
+#Enrichment in CC
+ea_10stpCC_TCGA <- enrichGO(entree_10stp_TCGA$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "CC", pvalueCutoff=1)
+result_10stpCC_TCGA= as.data.frame(ea_10stpCC_TCGA)
+result_10stpCC_TCGA
+write.csv(result_10stpCC_TCGA,file="EnrichmentAnalysis_CC_10stp_TCGA.csv",row.names=FALSE)
+
+DotPlot_KEGG_10stp_TCGA = dotplot(ea_10stpKEGG_TCGA, title = "Enrichment_Results_KEGG_10stp_TCGA", font.size = 8)
+DotPlot_KEGG_10stp_TCGA
+pairwise_result = pairwise_termsim(ea_10stpKEGG_TCGA) 
+EMapPlot_KEGG_10stp_TCGA = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_KEGG_10stp_TCGA")
+EMapPlot_KEGG_10stp_TCGA
+```
+
+```{r}
+#List of Genes
+entree_10stp_ICGC <- bitr(Int1000_10stp_ICGC, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = "org.Hs.eg.db")
+
+#Enrichment in KEGG
+ea_10stpKEGG_ICGC <- enrichKEGG(entree_10stp_ICGC$ENTREZID, pvalueCutoff=1)
+result_10stpKEGG_ICGC= as.data.frame(ea_10stpKEGG_ICGC)
+result_10stpKEGG_ICGC
+write.csv(result_10stpKEGG_ICGC,file="EnrichmentAnalysis_KEGG_10stp_ICGC.csv",row.names=FALSE)
+
+#Enrichment in MP
+ea_10stpMP_ICGC <- enrichGO(entree_10stp_ICGC$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "MF", pvalueCutoff=1)
+result_10stpMP_ICGC= as.data.frame(ea_10stpMP_ICGC)
+result_10stpMP_ICGC
+write.csv(result_10stpMP_ICGC,file="EnrichmentAnalysis_MP_10stp_ICGC.csv",row.names=FALSE)
+
+#Enrichment in BP
+ea_10stpBP_ICGC <- enrichGO(entree_10stp_ICGC$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "BP", pvalueCutoff=1)
+result_10stpBP_ICGC= as.data.frame(ea_10stpBP_ICGC)
+result_10stpBP_ICGC
+write.csv(result_10stpBP_ICGC,file="EnrichmentAnalysis_BP_10stp_ICGC.csv",row.names=FALSE)
+
+#Enrichment in CC
+ea_10stpCC_ICGC <- enrichGO(entree_10stp_ICGC$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "CC", pvalueCutoff=1)
+result_10stpCC_ICGC= as.data.frame(ea_10stpCC_ICGC)
+result_10stpCC_ICGC
+write.csv(result_10stpCC_ICGC,file="EnrichmentAnalysis_CC_10stp_ICGC.csv",row.names=FALSE)
+```
+
+```{r}
+#List of Genes
+entree_5stp_ICGC <- bitr(Int1000_5stp_ICGC, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = "org.Hs.eg.db")
+
+#Enrichment in KEGG
+ea_5stpKEGG_ICGC <- enrichKEGG(entree_5stp_ICGC$ENTREZID, pvalueCutoff=1)
+result_5stpKEGG_ICGC= as.data.frame(ea_5stpKEGG_ICGC)
+result_5stpKEGG_ICGC
+write.csv(result_5stpKEGG_ICGC,file="EnrichmentAnalysis_KEGG_5stp_ICGC.csv",row.names=FALSE)
+
+#List of Genes
+entree_5stp_TCGA <- bitr(Int1000_5stp_TCGA, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = "org.Hs.eg.db")
+
+#Enrichment in KEGG
+ea_5stpKEGG_TCGA <- enrichKEGG(entree_5stp_TCGA$ENTREZID, pvalueCutoff=1)
+result_5stpKEGG_TCGA= as.data.frame(ea_5stpKEGG_TCGA)
+result_5stpKEGG_TCGA
+write.csv(result_5stpKEGG_TCGA,file="EnrichmentAnalysis_KEGG_5stp_TCGA.csv",row.names=FALSE)
+```
+

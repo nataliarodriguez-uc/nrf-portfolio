@@ -1,0 +1,302 @@
+---
+title: "PDAC_Rfeatures_Spring2022"
+output: html_document
+---
+
+## Library and Dataset Import
+
+```{r}
+library("dplyr")
+library("faux")
+library("DataExplorer")
+library("caret")
+library("randomForest")
+library("ggplot2")
+library(ggvenn)
+
+TCGAfile = read.csv("/Users/nataliaa.rodriguez/ININ 4998 Pancreatic Cancer/TCGA_Preprocessed.csv")
+ICGCfile = read.csv("/Users/nataliaa.rodriguez/ININ 4998 Pancreatic Cancer/ICGC_Preprocessed.csv")
+```
+
+## Dataset Information
+
+```{r}
+Ix=ICGCfile[,2:35601]
+Iy=factor(ICGCfile[,'VS'])
+
+Tx=TCGAfile[,2:20025]
+Ty=factor(TCGAfile[,'OS'])
+```
+TCGA dimensions are `r dim(Tx)`. ICGC dimensions are `r dim(Ix)`. 
+
+## Control Function
+
+```{r}
+control <- rfeControl(functions = rfFuncs, # random forest
+                      method = "repeatedcv", # repeated cv
+                      repeats = 3, # number of repeats
+                      number = 5,verbose = FALSE) # number of folds
+```
+
+## test: RFE Execution Experimentation with Seed
+
+```{r}
+TCGAresult200 <- rfe(x =Tx, y =Ty, sizes = seq(from=1,to=200,by=1), rfeControl = control)
+TCGAresult200 
+
+set.seed(1)
+TCGAresult200 <- rfe(x =Tx, y =Ty, sizes = seq(from=1,to=200,by=1), rfeControl = control)
+TCGAresult200 
+```
+Results indicated that not assigning a fixed seed would change the random number generator that RFE uses to select the most important variables. A fixed seed will always return the same random numbers from the generator, hence the addition of seed(1).
+
+##TCGA and ICGC RFE with Step=500 up to all variables
+
+```{r}
+#Code
+set.seed(1) 
+TCGAresult_500stp <- rfe(x =Tx, y =Ty, sizes = seq(from=1,to=20025,by=500), rfeControl = control)
+TCGAresult_500stp
+#Save
+TCGAvar_500stp = TCGAfile[,which(names(TCGAfile) %in% predictors(TCGAresult_500stp))]
+write.csv(TCGAvar_500stp,file="TCGAvar_500stp.csv",row.names=FALSE)
+
+#Dataframe
+TCGAmetric_500stp = as.data.frame(TCGAresult_500stp$results)
+TCGAmetric_500stp
+#Save
+write.csv(TCGAmetric_500stp,file="TCGAmetric_500stp.csv",row.names=FALSE)
+
+#Graph
+TCGAgraph_500stp= ggplot(TCGAresult_500stp) + theme_bw()
+TCGAgraph_500stp
+TCGAerror = TCGAresult_500stp$results$AccuracySD/(sqrt(3*5))
+TCGAgraph_500stpEBar = ggplot(TCGAresult_500stp) + theme_bw() + geom_errorbar(aes(x=Variables, ymin=Accuracy-TCGAerror, ymax=Accuracy+TCGAerror),color='purple')
+TCGAgraph_500stpEBar
+```
+
+```{r}
+#Code 
+set.seed(1)
+ICGCresult_500stp <- rfe(x =Ix, y =Iy, sizes = seq(from=1,to=35601,by=500), rfeControl = control)
+ICGCresult_500stp
+#Save
+ICGCvar_500stp = ICGCfile[,which(names(ICGCfile) %in% predictors(ICGCresult_500stp))]
+write.csv(ICGCvar_500stp,file="ICGCvar_500stp.csv",row.names=FALSE)
+
+#Dataframe
+ICGCmetric_500stp= as.data.frame(ICGCresult_500stp$results)
+ICGCmetric_500stp
+#Save
+write.csv(ICGCmetric_500stp,file="ICGCmetric_500stp.csv",row.names=FALSE)
+
+#Graph
+ICGCgraph_500stp = ggplot(ICGCresult_500stp) + theme_bw()
+ICGCgraph_500stp
+ICGCerror = TCGAresult_500stp$results$AccuracySD/(sqrt(3*5))
+ICGCgraph_500stpEBar = ggplot(ICGCresult_500stp) + theme_bw()+ geom_errorbar(aes(x=Variables, ymin=Accuracy-ICGCerror, ymax=Accuracy+ICGCerror),color='purple')
+ICGCgraph_500stpEBar
+```
+
+## TCGA and ICGC RFE with Step=1 up to 1000 variables
+
+```{r}
+#Code
+set.seed(1)
+ICGCresult1000_1stp <- rfe(x =Ix, y =Iy, sizes = seq(from=1,to=1000,by=1), rfeControl = control)
+ICGCresult1000_1stp
+#Save
+ICGCvar1000_1stp = ICGCfile[,which(names(ICGCfile) %in% predictors(ICGCresult1000_1stp))]
+write.csv(ICGCvar1000_1stp,file="ICGCvar1000_1stp.csv",row.names=FALSE)
+
+#Dataframe
+ICGCmetric1000_1stp= as.data.frame(ICGCresult1000_1stp$results)
+ICGCmetric1000_1stp
+#Save
+write.csv(ICGCmetric1000_1stp,file="ICGCmetric1000_1stp.csv",row.names=FALSE)
+```
+
+##Additional Runs
+```{r}
+#Code
+set.seed(1)
+ICGCresult425 <- rfe(x =Ix, y =Iy, sizes = seq(from=1,to=425,by=1), rfeControl = control)
+ICGCresult425
+#Save
+ICGCvar425 = ICGCfile[,which(names(ICGCfile) %in% predictors(ICGCresult425))]
+write.csv(ICGCvar425,file="ICGCvar425.csv",row.names=FALSE)
+```
+
+```{r}
+#Code
+set.seed(1) 
+TCGAresult1000_1stp <- rfe(x =Tx, y =Ty, sizes = seq(from=1,to=1000,by=1), rfeControl = control)
+TCGAresult1000_1stp
+#Save
+TCGAvar1000_1stp = TCGAfile[,which(names(TCGAfile) %in% predictors(TCGAresult1000_1stp))]
+write.csv(TCGAvar1000_1stp,file="TCGAvar1000_1stp.csv",row.names=FALSE)
+
+#Dataframe
+TCGAmetric1000_1stp= as.data.frame(TCGAresult1000_1stp$results)
+TCGAmetric1000_1stp
+#Save
+write.csv(TCGAmetric1000_1stp,file="TCGAmetric1000_1stp.csv",row.names=FALSE)
+```
+
+## TCGA and ICGC RFE with Step=5 up to 1000 variables
+
+```{r}
+#Code
+set.seed(1)
+ICGCresult1000_5stp <- rfe(x =Ix, y =Iy, sizes = seq(from=1,to=1000,by=5), rfeControl = control)
+ICGCresult1000_5stp
+#Save
+ICGCvar1000_5stp = ICGCfile[,which(names(ICGCfile) %in% predictors(ICGCresult1000_5stp))]
+write.csv(ICGCvar1000_5stp,file="ICGCvar1000_5stp.csv",row.names=FALSE)
+
+#Dataframe
+ICGCmetric1000_5stp= as.data.frame(ICGCresult1000_5stp$results)
+ICGCmetric1000_5stp
+#Save
+write.csv(ICGCmetric1000_5stp,file="ICGCmetric1000_5stp.csv",row.names=FALSE)
+```
+
+```{r}
+set.seed(1) 
+TCGAresult1000_5stp <- rfe(x =Tx, y =Ty, sizes = seq(from=1,to=1000,by=5), rfeControl = control)
+TCGAresult1000_5stp
+#Save
+TCGAvar1000_5stp = TCGAfile[,which(names(TCGAfile) %in% predictors(TCGAresult1000_5stp))]
+write.csv(TCGAvar1000_5stp,file="TCGAvar1000_5stp.csv",row.names=FALSE)
+
+#Dataframe
+TCGAmetric1000_5stp= as.data.frame(TCGAresult1000_5stp$results)
+TCGAmetric1000_5stp
+#Save
+write.csv(TCGAmetric1000_5stp,file="TCGAmetric1000_5stp.csv",row.names=FALSE)
+```
+
+## TCGA and ICGC RFE with Step=10 up to 1000 variables
+
+```{r}
+set.seed(1)
+ICGCresult1000_10stp <- rfe(x =Ix, y =Iy, sizes = seq(from=1,to=1000,by=10), rfeControl = control)
+ICGCresult1000_10stp
+#Save
+ICGCvar1000_10stp = ICGCfile[,which(names(ICGCfile) %in% predictors(ICGCresult1000_10stp))]
+write.csv(ICGCvar1000_10stp,file="ICGCvar1000_10stp.csv",row.names=FALSE)
+
+#Dataframe
+ICGCmetric1000_10stp= as.data.frame(ICGCresult1000_10stp$results)
+ICGCmetric1000_10stp
+#Save
+write.csv(ICGCmetric1000_10stp,file="ICGCmetric1000_10stp.csv",row.names=FALSE)
+```
+
+```{r}
+set.seed(1)
+#Size = 741
+ICGCresult741_10stp <- rfe(x =Ix, y =Iy, rfeControl = control, sizes = 741)
+ICGCresult741_10stp
+#Save
+ICGCvar741_10stp = ICGCfile[,which(names(ICGCfile) %in% ICGCresult741_10stp$optVariables[1:741])] 
+write.csv(ICGCvar741_10stp,file="ICGCvar741_10stp.csv",row.names=FALSE)
+
+#Dataframe
+ICGCmetric741_10stp= as.data.frame(ICGCresult741_10stp$results)
+ICGCmetric741_10stp
+#Save
+write.csv(ICGCmetric741_10stp,file="ICGCmetric741_10stp.csv",row.names=FALSE)
+```
+
+```{r}
+set.seed(1) 
+TCGAresult1000_10stp <- rfe(x =Tx, y =Ty, sizes = seq(from=1,to=1000,by=10), rfeControl = control)
+TCGAresult1000_10stp
+#Save
+TCGAvar1000_10stp = TCGAfile[,which(names(TCGAfile) %in% predictors(TCGAresult1000_10stp))]
+write.csv(TCGAvar1000_10stp,file="TCGAvar1000_10stp.csv",row.names=FALSE)
+
+#Dataframe
+TCGAmetric1000_10stp= as.data.frame(TCGAresult1000_10stp$results)
+TCGAmetric1000_10stp
+#Save
+write.csv(TCGAmetric1000_10stp,file="TCGAmetric1000_10stp.csv",row.names=FALSE)
+```
+
+## TCGA and ICGC 1000Predictors Venn Diagram
+
+```{r}
+#1000 Predictors with Step=1
+list1000_1stp = list(TCGA1stp_Features=predictors(TCGAresult1000_1stp),ICGC1stp_Features=predictors(ICGCresult1000_1stp))
+VennD1000_1stp= ggvenn(list1000_1stp,show_percentage=FALSE,show_elements = FALSE,fill_color=c("blue","purple"),text_size= 10,set_name_size = 7)
+Int1000_1stp = intersect(predictors(TCGAresult1000_1stp),predictors(ICGCresult1000_1stp))
+Int1000_1stp_df = as.data.frame(Int1000_1stp)
+VennD1000_1stp
+
+#1000 Predictors with Step=5
+list1000_5stp = list(TCGA5stp_Features=predictors(TCGAresult1000_5stp),ICGC5stp_Features=predictors(ICGCresult1000_5stp))
+VennD1000_5stp= ggvenn(list1000_5stp,show_percentage=FALSE,show_elements = FALSE,fill_color=c("blue","purple"),text_size= 10,set_name_size = 7)
+Int1000_5stp = intersect(predictors(TCGAresult1000_5stp),predictors(ICGCresult1000_5stp))
+Int1000_5stp_df = as.data.frame(Int1000_5stp)
+Int1000_5stp_df
+VennD1000_5stp
+
+#1000 Predictors with Step=10
+list1000_10stp = list(TCGA10stp_Features=predictors(TCGAresult1000_10stp),ICGC10stp_Features=ICGCresult741_10stp$optVariables[1:741])
+VennD1000_10stp= ggvenn(list1000_10stp,show_percentage=FALSE,show_elements = FALSE,fill_color=c("blue","purple"),text_size= 10,set_name_size = 7)
+Int1000_10stp = intersect(predictors(TCGAresult1000_10stp),ICGCresult741_10stp$optVariables[1:741])
+Int1000_10stp_df = as.data.frame(Int1000_10stp)
+Int1000_10stp_df
+VennD1000_10stp
+
+#Save as PNG
+png("VennD1000_1stp.png")
+VennD1000_1stp
+dev.off()
+png("VennD1000_5stp.png")
+VennD1000_5stp
+dev.off()
+png("VennD1000_10stp.png")
+VennD1000_10stp
+dev.off()
+```
+
+```{r}
+#Intersection between Datasets
+Int1000_10stp_df
+write.csv(Int1000_10stp_df,file="Int1000_10stp.csv",row.names=FALSE)
+
+TCGAint1000_10stp = TCGAfile[,which(names(TCGAfile) %in% Int1000_10stp)]
+write.csv(TCGAint1000_10stp,file="TCGAint1000_10stp.csv",row.names=FALSE)
+
+ICGCint741_10stp = ICGCfile[,which(names(ICGCfile) %in% Int1000_10stp) ]
+write.csv(ICGCint741_10stp,file="ICGCint741_10stp.csv",row.names=FALSE)
+  
+Int1000_5stp_df
+write.csv(Int1000_5stp_df,file="Int1000_5stp.csv",row.names=FALSE)
+
+TCGAint1000_5stp = TCGAfile[,which(names(TCGAfile) %in% Int1000_5stp)]
+write.csv(TCGAint1000_5stp,file="TCGAint1000_5stp.csv",row.names=FALSE)
+
+ICGCint1000_5stp = ICGCfile[,which(names(ICGCfile) %in% Int1000_5stp)]
+write.csv(ICGCint1000_5stp,file="ICGCint1000_5stp.csv",row.names=FALSE)
+
+```
+
+```{r}
+Int1000_10stp_5stp = intersect(Int1000_10stp,Int1000_5stp)
+Int1000_10stp_5stp
+
+list1000_10stp_5stp = list(Int1000_10stp=Int1000_10stp,Int1000_5stp=Int1000_5stp)
+VennD1000_10stp_5stp= ggvenn(list1000_10stp_5stp,show_percentage=FALSE,show_elements = FALSE,fill_color=c("blue","purple"),text_size= 10,set_name_size = 7)
+VennD1000_10stp_5stp
+```
+
+
+
+
+
+
+
+

@@ -1,0 +1,206 @@
+---
+title: "EnrichmentAnalysisSteps"
+author: "Wandaliz Torres-Garcia"
+date: "1/17/2022"
+output: pdf_document
+---
+
+#SetUp
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require("knitr")
+opts_knit$set(root.dir = "C:/Users/WandalizTorresGarcia/Documents/UPRM_Research/ININ 4998/ININ4998_ININ4996_S22/pancreas_Natalia/")
+```
+
+#Libraries
+```{r}
+#if (!require("BiocManager", quietly = TRUE))
+    #install.packages("BiocManager")
+
+#BiocManager::install("org.Hs.eg.db",character.only=TRUE)
+#BiocManager::install()
+#BiocManager::install("clusterProfiler")
+#BiocManager::install("GO.db")
+#BiocManager::install("enrichplot",force=TRUE)
+
+library("GO.db")
+library("clusterProfiler")
+library("enrichplot")
+library("ggplot2")
+library("ggnewscale")
+```
+
+#Enrichment Analysis for Intersection of ICGC/TCGA with Step=5
+```{r}
+#List of Genes
+entree_5stp <- bitr(Int1000_5stp_df$Int1000_5stp, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = "org.Hs.eg.db")
+
+#Enrichment in KEGG
+ea_5stpKEGG <- enrichKEGG(entree_5stp$ENTREZID, pvalueCutoff=1)
+result_5stpKEGG= as.data.frame(ea_5stpKEGG)
+result_5stpKEGG
+write.csv(result_5stpKEGG,file="EnrichmentAnalysis_KEGG_5stp.csv",row.names=FALSE)
+
+#Enrichment in MP
+ea_5stpMP <- enrichGO(entree_5stp$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "MF", pvalueCutoff=1)
+result_5stpMP= as.data.frame(ea_5stpMP)
+result_5stpMP
+write.csv(result_5stpMP,file="EnrichmentAnalysis_MP_5stp.csv",row.names=FALSE)
+
+#Enrichment in BP
+ea_5stpBP <- enrichGO(entree_5stp$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "BP", pvalueCutoff=1)
+result_5stpBP= as.data.frame(ea_5stpBP)
+result_5stpBP
+write.csv(result_5stpBP,file="EnrichmentAnalysis_BP_5stp.csv",row.names=FALSE)
+
+#Enrichment in CC
+ea_5stpCC <- enrichGO(entree_5stp$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "CC", pvalueCutoff=1)
+result_5stpCC= as.data.frame(ea_5stpCC)
+result_5stpCC
+write.csv(result_5stpCC,file="EnrichmentAnalysis_CC_5stp.csv",row.names=FALSE)
+```
+#Enrichment Analysis for Intersection of ICGC/TCGA with Step=10
+```{r}
+#List of Genes
+entree_10stp <- bitr(Int1000_10stp_df$Int1000_10stp, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = "org.Hs.eg.db")
+
+#Enrichment in KEGG
+ea_10stpKEGG <- enrichKEGG(entree_10stp$ENTREZID, pvalueCutoff=1)
+result_10stpKEGG= as.data.frame(ea_10stpKEGG)
+result_10stpKEGG
+write.csv(result_10stpKEGG,file="EnrichmentAnalysis_KEGG_10stp.csv",row.names=FALSE)
+
+#Enrichment in MP
+ea_10stpMP <- enrichGO(entree_10stp$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "MF", pvalueCutoff=1)
+result_10stpMP= as.data.frame(ea_10stpMP)
+result_10stpMP
+write.csv(result_10stpMP,file="EnrichmentAnalysis_MP_10stp.csv",row.names=FALSE)
+
+#Enrichment in BP
+ea_10stpBP <- enrichGO(entree_10stp$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "BP", pvalueCutoff=1)
+result_10stpBP= as.data.frame(ea_10stpBP)
+result_10stpBP
+write.csv(result_10stpBP,file="EnrichmentAnalysis_BP_10stp.csv",row.names=FALSE)
+
+#Enrichment in CC
+ea_10stpCC <- enrichGO(entree_10stp$ENTREZID, OrgDb ="org.Hs.eg.db", ont = "CC", pvalueCutoff=1)
+result_10stpCC= as.data.frame(ea_10stpCC)
+result_10stpCC
+write.csv(result_10stpCC,file="EnrichmentAnalysis_CC_10stp.csv",row.names=FALSE)
+```
+
+#Enrichment Plot Analysis with Step=5
+```{r}
+#KEGG Plots
+DotPlot_KEGG_5stp = dotplot(ea_5stpKEGG, title = "Enrichment_Results_KEGG_5stp", font.size = 8)
+
+pairwise_result = pairwise_termsim(ea_5stpKEGG) 
+EMapPlot_KEGG_5stp = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_KEGG_5stp")
+
+png("Enrichment_DotPlot_KEGG_5stp.png")
+DotPlot_KEGG_5stp
+dev.off()
+png("Enrichment_Map_KEGG_5stp.png")
+EMapPlot_KEGG_5stp
+dev.off()
+
+#MP Plots
+DotPlot_MP_5stp = dotplot(ea_5stpMP, title = "Enrichment_Results_MP_5stp", font.size = 8)
+
+pairwise_result = pairwise_termsim(ea_5stpMP) 
+EMapPlot_MP_5stp = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_MP_5stp")
+
+png("Enrichment_DotPlot_MP_5stp.png")
+DotPlot_MP_5stp
+dev.off()
+png("Enrichment_Map_MP_5stp.png")
+EMapPlot_MP_5stp
+dev.off()
+
+#BP Plots
+DotPlot_BP_5stp = dotplot(ea_5stpBP, title = "Enrichment_Results_BP_5stp", font.size = 8)
+
+pairwise_result = pairwise_termsim(ea_5stpBP) 
+EMapPlot_BP_5stp = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_BP_5stp")
+
+png("Enrichment_DotPlot_BP_5stp.png")
+DotPlot_BP_5stp
+dev.off()
+png("Enrichment_Map_BP_5stp.png")
+EMapPlot_BP_5stp
+dev.off()
+
+#CC Plots
+DotPlot_CC_5stp = dotplot(ea_5stpCC, title = "Enrichment_Results_CC_5stp", font.size = 8)
+
+pairwise_result = pairwise_termsim(ea_5stpCC) 
+EMapPlot_CC_5stp = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_CC_5stp")
+
+png("Enrichment_DotPlot_CC_5stp.png")
+DotPlot_CC_5stp
+dev.off()
+png("Enrichment_Map_CC_5stp.png")
+EMapPlot_CC_5stp
+dev.off()
+```
+
+#Enrichment Plot Analysis with Step=10
+```{r}
+#KEGG Plots
+DotPlot_KEGG_10stp = dotplot(ea_10stpKEGG, title = "Enrichment_Results_KEGG_10stp", font.size = 8)
+
+pairwise_result = pairwise_termsim(ea_10stpKEGG) 
+EMapPlot_KEGG_10stp = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_KEGG_10stp")
+
+png("Enrichment_DotPlot_KEGG_10stp.png")
+DotPlot_KEGG_10stp
+dev.off()
+png("Enrichment_Map_KEGG_10stp.png")
+EMapPlot_KEGG_10stp
+dev.off()
+
+#MP Plots
+DotPlot_MP_10stp = dotplot(ea_10stpMP, title = "Enrichment_Results_MP_10stp", font.size = 8)
+
+pairwise_result = pairwise_termsim(ea_10stpMP) 
+EMapPlot_MP_10stp = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_MP_10stp")
+
+png("Enrichment_DotPlot_MP_10stp.png")
+DotPlot_MP_10stp
+dev.off()
+png("Enrichment_Map_MP_10stp.png")
+EMapPlot_MP_10stp
+dev.off()
+
+#BP Plots
+DotPlot_BP_10stp = dotplot(ea_10stpBP, title = "Enrichment_Results_BP_10stp", font.size = 8)
+
+pairwise_result = pairwise_termsim(ea_10stpBP) 
+EMapPlot_BP_10stp = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_BP_10stp")
+
+png("Enrichment_DotPlot_BP_10stp.png")
+DotPlot_BP_10stp
+dev.off()
+png("Enrichment_Map_BP_10stp.png")
+EMapPlot_BP_10stp
+dev.off()
+
+#CC Plots
+#DotPlot_CC_10stp = dotplot(ea_10stpCC, title = "Enrichment_Results_CC_10stp", font.size = 8)
+
+#pairwise_result = pairwise_termsim(ea_10stpCC) 
+#EMapPlot_CC_10stp = emapplot(pairwise_result, line_scale = 0.2, node_scale = 0.5, layout = "nicely", cex_label_category = 0.5) + ggtitle("Enrichment_Map_CC_10stp")
+
+#png("Enrichment_Map_CC_10stp.png")
+#DotPlot_CC_10stp
+#dev.off()
+#png("Enrichment_Map_CC_10stp.png")
+#EMapPlot_CC_10stp
+#dev.off()
+```
+```{r}
+#library(limma)
+tab <- getGeneKEGGLinks(species="hsa")
+tab$Symbol <- mapIds(org.Hs.eg.db, tab$GeneID,
+                       column="SYMBOL", keytype="ENTREZID")
+```
