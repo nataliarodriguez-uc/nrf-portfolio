@@ -1,0 +1,49 @@
+---
+title: "Natalias RFE"
+output: html_notebook
+---
+
+
+```{r}
+#Libraries & WD
+library("faux")
+library("DataExplorer")
+library(ggplot2);library(dplyr)
+library(caret);library(randomForest);library(RColorBrewer);library(ggplot2)
+library(tidyr);library(dplyr)
+```
+```{r}
+
+#sources
+source("C:/Users/dramo/Desktop/Tesis/Abstract_Codes_Official/RFE_Functions.R")
+source("C:/Users/dramo/Desktop/Tesis/Abstract/VennDiagram.R")
+
+```
+
+```{r}
+TGCA=read.csv("C:/Users/dramo/Downloads/TCGA_Preprocessed.csv")
+ICGC=read.csv("C:/Users/dramo/Downloads/ICGC_Preprocessed.csv")
+```
+```{r}
+Time=24
+NP=c("ICGC")
+size=seq(from=1,to=400,by=5)
+control=cntrl()
+Size=1500
+```
+
+```{r}
+ x=ICGC[,2:35602]
+ y=ICGC[,35603]
+```
+
+```{r}
+#Run RFE Class
+      startc=Sys.time()
+      resultc=C_RFE(x,y,size,Size,control,NP[n])
+      endc=Sys.time()
+      Timec=difftime(endc,startc,units="mins")
+```
+```{r}
+write.csv(predictors(resultc),file=paste("resultsC.csv"))
+```

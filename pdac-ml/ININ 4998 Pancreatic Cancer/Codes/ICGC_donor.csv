@@ -1,0 +1,462 @@
+,icgc_donor_id,project_code,study_donor_involved_in,submitted_donor_id,donor_sex,donor_vital_status,disease_status_last_followup,donor_relapse_type,donor_age_at_diagnosis,donor_age_at_enrollment,donor_age_at_last_followup,donor_relapse_interval,donor_diagnosis_icd10,donor_tumour_staging_system_at_diagnosis,donor_tumour_stage_at_diagnosis,donor_tumour_stage_at_diagnosis_supplemental,donor_survival_time,donor_interval_of_last_followup,prior_malignancy,cancer_type_prior_malignancy,cancer_history_first_degree_relative
+0,DO35009,PACA-AU,,ICGC_0346,male,deceased,,,64.0,64.0,,,C25.0,TNM,,,787.0,787.0,unknown,,unknown
+1,DO35001,PACA-AU,,ICGC_0345,female,deceased,progression,distant recurrence/metastasis,83.0,83.0,,55.0,C25.0,TNM,,,77.0,77.0,unknown,,unknown
+2,DO35057,PACA-AU,,ICGC_0352,female,alive,stable,,76.0,76.0,,,C25.0,TNM,,,485.0,485.0,unknown,,unknown
+3,DO35073,PACA-AU,,ICGC_0341,male,alive,progression,distant recurrence/metastasis,65.0,65.0,,,C25.0,TNM,,,764.0,764.0,unknown,,unknown
+4,DO35065,PACA-AU,,ICGC_0353,male,deceased,progression,,53.0,53.0,,,C25.0,TNM,,,164.0,164.0,unknown,,unknown
+5,DO35033,PACA-AU,,ICGC_0349,female,deceased,progression,,83.0,83.0,,,C25.0,TNM,,,107.0,107.0,unknown,,unknown
+6,DO35049,PACA-AU,,ICGC_0351,female,alive,stable,,87.0,87.0,,,C25.0,TNM,,,397.0,397.0,unknown,,unknown
+7,DO35041,PACA-AU,,ICGC_0350,male,deceased,progression,,61.0,61.0,,,C25.0,TNM,,,155.0,155.0,unknown,,unknown
+8,DO35017,PACA-AU,,ICGC_0347,male,alive,stable,,60.0,60.0,,,C25.0,TNM,,,238.0,238.0,unknown,,unknown
+9,DO35025,PACA-AU,,ICGC_0348,female,alive,stable,,56.0,56.0,,,C25.0,TNM,,,1591.0,1591.0,unknown,,unknown
+10,DO49206,PACA-AU,,ICGC_0546,male,alive,progression,,82.0,82.0,,,C25.0,TNM,,,32.0,32.0,unknown,,unknown
+11,DO49207,PACA-AU,,ICGC_0547,male,alive,progression,,73.0,73.0,,,C25.0,TNM,,,37.0,37.0,unknown,,unknown
+12,DO49204,PACA-AU,PCAWG,ICGC_0543,male,deceased,progression,distant recurrence/metastasis,67.0,67.0,,,C25.0,TNM,,,156.0,156.0,unknown,,unknown
+13,DO49205,PACA-AU,,ICGC_0544,female,alive,stable,,72.0,72.0,,,C25.0,TNM,,,89.0,89.0,unknown,,unknown
+14,DO49202,PACA-AU,,ICGC_0530,male,deceased,progression,distant recurrence/metastasis,69.0,69.0,,357.0,C25.0,TNM,,,464.0,464.0,unknown,,unknown
+15,DO49203,PACA-AU,,ICGC_0531,female,deceased,progression,local recurrence,68.0,68.0,,458.0,C25.0,TNM,,,518.0,518.0,unknown,,unknown
+16,DO49200,PACA-AU,,ICGC_0528,female,alive,stable,,59.0,59.0,,,C25.0,TNM,,,2703.0,2703.0,unknown,,unknown
+17,DO49201,PACA-AU,,ICGC_0529,,,,,,,,,C25.0,TNM,,,,,unknown,,unknown
+18,DO49198,PACA-AU,,ICGC_0512,female,deceased,progression,distant recurrence/metastasis,61.0,61.0,,230.0,C25.0,TNM,,,251.0,251.0,unknown,,unknown
+19,DO49199,PACA-AU,,ICGC_0513,male,deceased,progression,distant recurrence/metastasis,52.0,52.0,,327.0,C25.3,TNM,,,1095.0,1095.0,unknown,,unknown
+20,DO49189,PACA-AU,,ICGC_0524,male,deceased,progression,local recurrence,59.0,59.0,,323.0,C25.0,TNM,,,440.0,440.0,unknown,,unknown
+21,DO49188,PACA-AU,,ICGC_0523,male,deceased,stable,,76.0,76.0,,,C25.0,TNM,,,47.0,47.0,unknown,,unknown
+22,DO49196,PACA-AU,,ICGC_0510,male,deceased,progression,distant recurrence/metastasis,66.0,66.0,,990.0,C25.0,TNM,,,1107.0,1107.0,unknown,,unknown
+23,DO49197,PACA-AU,,ICGC_0511,male,deceased,progression,distant recurrence/metastasis,70.0,70.0,,482.0,C25.0,TNM,,,514.0,514.0,unknown,,unknown
+24,DO49194,PACA-AU,,ICGC_0527,male,deceased,,,62.0,62.0,,,C25.0,TNM,,,182.0,182.0,unknown,,unknown
+25,DO49195,PACA-AU,,ICGC_0509,male,deceased,progression,distant recurrence/metastasis,59.0,59.0,,36.0,C25.0,TNM,,,112.0,112.0,unknown,,unknown
+26,DO49192,PACA-AU,,ICGC_0525,male,alive,progression,local recurrence,58.0,58.0,,1075.0,C25.0,TNM,,,1758.0,1758.0,unknown,,unknown
+27,DO49193,PACA-AU,PCAWG,ICGC_0526,male,deceased,stable,,60.0,60.0,,,C25.0,TNM,,,1.0,1.0,unknown,,unknown
+28,DO49190,PACA-AU,,ICGC_0508,female,deceased,progression,local recurrence,61.0,61.0,,528.0,C25.0,TNM,,,823.0,823.0,unknown,,unknown
+29,DO49178,PACA-AU,PCAWG,ICGC_0518,male,deceased,stable,,58.0,58.0,,,C25.0,TNM,,,27.0,27.0,unknown,,unknown
+30,DO49179,PACA-AU,,ICGC_0506,,alive,stable,,,,,,C25.0,TNM,,,2428.0,2428.0,unknown,,unknown
+31,DO49176,PACA-AU,,ICGC_0505,male,deceased,progression,local recurrence,68.0,68.0,,701.0,C25.0,TNM,,,925.0,925.0,unknown,,unknown
+32,DO49177,PACA-AU,,ICGC_0517,male,deceased,progression,distant recurrence/metastasis,61.0,61.0,,112.0,C25.0,TNM,,,123.0,123.0,unknown,,unknown
+33,DO49185,PACA-AU,,ICGC_0542,male,alive,stable,,55.0,55.0,,,C25.0,TNM,,,179.0,179.0,unknown,,unknown
+34,DO49183,PACA-AU,PCAWG,ICGC_0521,female,deceased,progression,distant recurrence/metastasis,51.0,51.0,,,C25.0,TNM,,,429.0,429.0,unknown,,unknown
+35,DO49184,PACA-AU,PCAWG,ICGC_0522,male,deceased,progression,distant recurrence/metastasis,56.0,56.0,,242.0,C25.0,TNM,,,455.0,455.0,unknown,,unknown
+36,DO49181,PACA-AU,PCAWG,ICGC_0507,male,deceased,progression,distant recurrence/metastasis,77.0,77.0,,,C25.0,TNM,,,1534.0,1534.0,unknown,,unknown
+37,DO49182,PACA-AU,,ICGC_0520,male,deceased,progression,distant recurrence/metastasis,56.0,56.0,,284.0,C25.0,TNM,,,498.0,498.0,unknown,,unknown
+38,DO49180,PACA-AU,,ICGC_0519,female,deceased,progression,local recurrence,61.0,61.0,,821.0,C25.0,TNM,,,1057.0,1057.0,unknown,,unknown
+39,DO49169,PACA-AU,,ICGC_0537,male,alive,stable,,75.0,75.0,,,C25.0,TNM,,,196.0,196.0,unknown,,unknown
+40,DO49168,PACA-AU,PCAWG,ICGC_0536,male,alive,stable,,58.0,58.0,,,C25.0,TNM,,,149.0,149.0,unknown,,unknown
+41,DO49165,PACA-AU,,ICGC_0422,female,alive,stable,,56.0,56.0,,,C25.0,TNM,,,205.0,205.0,unknown,,unknown
+42,DO49166,PACA-AU,PCAWG,ICGC_0535,female,alive,progression,distant recurrence/metastasis,40.0,40.0,,,C25.0,TNM,,,222.0,222.0,unknown,,unknown
+43,DO49175,PACA-AU,,ICGC_0504,male,deceased,progression,distant recurrence/metastasis,68.0,68.0,,348.0,C25.0,TNM,,,414.0,414.0,unknown,,unknown
+44,DO49172,PACA-AU,PCAWG,ICGC_0502,female,deceased,progression,distant recurrence/metastasis,60.0,60.0,,688.0,C25.3,TNM,,,1021.0,1021.0,unknown,,unknown
+45,DO49173,PACA-AU,,ICGC_0541,female,alive,,,75.0,75.0,,,C25.0,TNM,,,,,unknown,,unknown
+46,DO49170,PACA-AU,,ICGC_0538,male,alive,stable,,67.0,67.0,,,C25.0,TNM,,,197.0,197.0,unknown,,unknown
+47,DO49171,PACA-AU,,ICGC_0540,male,alive,stable,,58.0,58.0,,,C25.0,TNM,,,148.0,148.0,unknown,,unknown
+48,DO49158,PACA-AU,,ICGC_0384,female,deceased,,,74.0,74.0,,,C25.0,TNM,,,278.0,278.0,unknown,,unknown
+49,DO49159,PACA-AU,,ICGC_0385,male,alive,progression,distant recurrence/metastasis,69.0,69.0,,741.0,C25.0,TNM,,,1042.0,1042.0,unknown,,unknown
+50,DO49156,PACA-AU,,ICGC_0382,male,alive,progression,distant recurrence/metastasis,,,,386.0,C25.0,TNM,,,505.0,505.0,unknown,,unknown
+51,DO49157,PACA-AU,,ICGC_0383,female,alive,stable,,69.0,69.0,,,C25.0,TNM,,,974.0,974.0,unknown,,unknown
+52,DO49154,PACA-AU,,ICGC_0380,male,deceased,stable,,70.0,70.0,,,C25.0,TNM,,,154.0,154.0,unknown,,unknown
+53,DO49155,PACA-AU,,ICGC_0381,female,deceased,progression,local recurrence,78.0,78.0,,413.0,C25.0,TNM,,,442.0,442.0,unknown,,unknown
+54,DO49163,PACA-AU,,ICGC_0389,female,alive,progression,distant recurrence/metastasis,61.0,61.0,,302.0,C25.0,TNM,,,302.0,302.0,unknown,,unknown
+55,DO49164,PACA-AU,,ICGC_0421,male,alive,stable,,70.0,70.0,,,C25.0,TNM,,,272.0,272.0,unknown,,unknown
+56,DO49161,PACA-AU,,ICGC_0387,male,alive,stable,,63.0,63.0,,,C25.0,TNM,,,603.0,603.0,unknown,,unknown
+57,DO49162,PACA-AU,,ICGC_0388,female,alive,stable,,68.0,68.0,,,C25.0,TNM,,,419.0,419.0,unknown,,unknown
+58,DO49160,PACA-AU,,ICGC_0386,female,deceased,progression,,80.0,80.0,,,C25.0,TNM,,,71.0,71.0,unknown,,unknown
+59,DO49149,PACA-AU,,ICGC_0375,male,alive,stable,,70.0,70.0,,,C25.0,TNM,,,1920.0,1920.0,unknown,,unknown
+60,DO49147,PACA-AU,,ICGC_0373,male,alive,stable,,64.0,64.0,,,C25.0,TNM,,,363.0,363.0,unknown,,unknown
+61,DO49148,PACA-AU,,ICGC_0374,male,deceased,progression,distant recurrence/metastasis,68.0,68.0,,252.0,C25.0,TNM,,,722.0,722.0,unknown,,unknown
+62,DO49145,PACA-AU,,ICGC_0371,female,deceased,progression,distant recurrence/metastasis,58.0,58.0,,112.0,C25.0,TNM,,,185.0,185.0,unknown,,unknown
+63,DO49146,PACA-AU,,ICGC_0372,female,alive,stable,,68.0,68.0,,,C25.0,TNM,,,564.0,564.0,unknown,,unknown
+64,DO49143,PACA-AU,,ICGC_0369,female,deceased,progression,,76.0,76.0,,,C25.0,TNM,,,1256.0,1256.0,unknown,,unknown
+65,DO49144,PACA-AU,,ICGC_0370,male,deceased,progression,,67.0,67.0,,,C25.0,TNM,,,1632.0,1632.0,unknown,,unknown
+66,DO49152,PACA-AU,,ICGC_0378,male,deceased,stable,,65.0,65.0,,,C25.0,TNM,,,13.0,13.0,unknown,,unknown
+67,DO49150,PACA-AU,,ICGC_0376,female,deceased,progression,local recurrence,68.0,68.0,,238.0,C25.0,TNM,,,330.0,330.0,unknown,,unknown
+68,DO49151,PACA-AU,,ICGC_0377,male,deceased,progression,,74.0,74.0,,,C25.0,TNM,,,56.0,56.0,unknown,,unknown
+69,DO49138,PACA-AU,PCAWG,ICGC_0420,male,deceased,progression,,74.0,74.0,,,C25.0,TNM,,,230.0,230.0,unknown,,unknown
+70,DO49136,PACA-AU,,ICGC_0418,female,alive,progression,distant recurrence/metastasis,57.0,57.0,,168.0,C25.0,TNM,,,309.0,309.0,unknown,,unknown
+71,DO49137,PACA-AU,PCAWG,ICGC_0419,female,alive,progression,distant recurrence/metastasis,67.0,67.0,,45.0,C25.0,TNM,,,232.0,232.0,unknown,,unknown
+72,DO49134,PACA-AU,,ICGC_0416,female,alive,progression,distant recurrence/metastasis,83.0,83.0,,98.0,C25.0,TNM,,,350.0,350.0,unknown,,unknown
+73,DO49135,PACA-AU,PCAWG,ICGC_0417,male,alive,stable,,65.0,65.0,,,C25.0,TNM,,,270.0,270.0,unknown,,unknown
+74,DO49132,PACA-AU,,ICGC_0414,female,alive,stable,,86.0,86.0,,,C25.0,TNM,,,349.0,349.0,unknown,,unknown
+75,DO49133,PACA-AU,PCAWG,ICGC_0415,female,alive,stable,,55.0,55.0,,,C25.0,TNM,,,188.0,188.0,unknown,,unknown
+76,DO49141,PACA-AU,,ICGC_0367,male,deceased,progression,distant recurrence/metastasis,63.0,63.0,,122.0,C25.0,TNM,,,357.0,357.0,unknown,,unknown
+77,DO49142,PACA-AU,,ICGC_0368,male,deceased,progression,,71.0,71.0,,,C25.0,TNM,,,111.0,111.0,unknown,,unknown
+78,DO49140,PACA-AU,,ICGC_0366,female,deceased,progression,distant recurrence/metastasis,74.0,74.0,,292.0,C25.0,TNM,,,560.0,560.0,unknown,,unknown
+79,DO49129,PACA-AU,PCAWG,ICGC_0365,male,alive,stable,,50.0,50.0,,,C25.0,TNM,,,337.0,337.0,unknown,,unknown
+80,DO49127,PACA-AU,PCAWG,ICGC_0412,female,alive,stable,,77.0,77.0,,,C25.0,TNM,,,392.0,392.0,unknown,,unknown
+81,DO49128,PACA-AU,,ICGC_0363,female,alive,stable,,65.0,65.0,,,C25.0,TNM,,,326.0,326.0,unknown,,unknown
+82,DO49125,PACA-AU,,ICGC_0361,male,alive,progression,distant recurrence/metastasis,55.0,55.0,,251.0,C25.0,TNM,,,406.0,406.0,unknown,,unknown
+83,DO49126,PACA-AU,,ICGC_0362,female,alive,progression,distant recurrence/metastasis,59.0,59.0,,274.0,C25.0,TNM,,,363.0,363.0,unknown,,unknown
+84,DO49123,PACA-AU,,ICGC_0493,female,deceased,progression,distant recurrence/metastasis,80.0,80.0,,209.0,C25.0,TNM,,,348.0,348.0,unknown,,unknown
+85,DO49124,PACA-AU,,ICGC_0411,male,alive,progression,distant recurrence/metastasis,67.0,67.0,,,C25.0,TNM,,,377.0,377.0,unknown,,unknown
+86,DO49121,PACA-AU,,ICGC_0360,male,alive,progression,local recurrence,68.0,68.0,,,C25.0,TNM,,,447.0,447.0,unknown,,unknown
+87,DO49122,PACA-AU,,ICGC_0410,female,deceased,stable,,78.0,78.0,,,C25.0,TNM,,,10.0,10.0,unknown,,unknown
+88,DO49130,PACA-AU,,ICGC_0364,female,alive,stable,,76.0,76.0,,,C25.0,TNM,,,351.0,351.0,unknown,,unknown
+89,DO49131,PACA-AU,,ICGC_0413,male,deceased,stable,,78.0,78.0,,,C25.0,TNM,,,32.0,32.0,unknown,,unknown
+90,DO49118,PACA-AU,,ICGC_0423,female,deceased,progression,distant recurrence/metastasis,78.0,78.0,,,C25.0,TNM,,,369.0,369.0,unknown,,unknown
+91,DO49119,PACA-AU,,ICGC_0409,male,deceased,progression,distant recurrence/metastasis,75.0,75.0,,,C25.0,TNM,,,279.0,279.0,unknown,,unknown
+92,DO49116,PACA-AU,,ICGC_0408,female,alive,stable,,62.0,62.0,,,C25.0,TNM,,,419.0,419.0,unknown,,unknown
+93,DO49117,PACA-AU,,ICGC_0359,female,alive,stable,,76.0,76.0,,,C25.0,TNM,,,398.0,398.0,unknown,,unknown
+94,DO49115,PACA-AU,,ICGC_0407,female,alive,progression,distant recurrence/metastasis,68.0,68.0,,326.0,C25.0,TNM,,,378.0,378.0,unknown,,unknown
+95,DO49112,PACA-AU,,ICGC_0358,male,alive,stable,,66.0,66.0,,,C25.0,TNM,,,441.0,441.0,unknown,,unknown
+96,DO49113,PACA-AU,PCAWG,ICGC_0406,female,alive,stable,,46.0,46.0,,,C25.0,TNM,,,413.0,413.0,unknown,,unknown
+97,DO49110,PACA-AU,,ICGC_0516,male,deceased,progression,distant recurrence/metastasis,56.0,56.0,,1933.0,C25.0,TNM,,,2153.0,2153.0,unknown,,unknown
+98,DO49111,PACA-AU,,ICGC_0405,female,alive,progression,local recurrence,65.0,65.0,,,C25.0,TNM,,,487.0,487.0,unknown,,unknown
+99,DO49109,PACA-AU,,ICGC_0404,female,deceased,stable,,57.0,57.0,,,C25.0,TNM,,,19.0,19.0,unknown,,unknown
+100,DO49107,PACA-AU,,ICGC_0357,female,deceased,progression,,60.0,60.0,,,C25.0,TNM,,,143.0,143.0,unknown,,unknown
+101,DO49108,PACA-AU,,ICGC_0490,male,deceased,progression,distant recurrence/metastasis,81.0,81.0,,,C25.0,TNM,,,91.0,91.0,unknown,,unknown
+102,DO49105,PACA-AU,,ICGC_0532,male,deceased,progression,distant recurrence/metastasis,59.0,59.0,,129.0,C25.0,TNM,,,445.0,445.0,unknown,,unknown
+103,DO49103,PACA-AU,,ICGC_0355,male,deceased,progression,,62.0,62.0,,,C25.0,TNM,,,123.0,123.0,unknown,,unknown
+104,DO49104,PACA-AU,,ICGC_0356,male,alive,stable,,61.0,61.0,,,C25.0,TNM,,,501.0,501.0,unknown,,unknown
+105,DO49101,PACA-AU,,ICGC_0403,male,deceased,progression,distant recurrence/metastasis,76.0,76.0,,247.0,C25.0,TNM,,,385.0,385.0,unknown,,unknown
+106,DO49100,PACA-AU,,ICGC_0402,male,alive,stable,,79.0,79.0,,,C25.0,TNM,,,308.0,308.0,unknown,,unknown
+107,DO49089,PACA-AU,,ICGC_0396,male,alive,stable,,53.0,53.0,,,C25.0,TNM,,,474.0,474.0,unknown,,unknown
+108,DO49097,PACA-AU,,ICGC_0399,female,deceased,progression,distant recurrence/metastasis,55.0,55.0,,661.0,C25.0,TNM,,,894.0,894.0,unknown,,unknown
+109,DO49098,PACA-AU,,ICGC_0400,female,deceased,progression,,82.0,82.0,,,C25.0,TNM,,,568.0,568.0,unknown,,unknown
+110,DO49096,PACA-AU,,ICGC_0488,male,alive,progression,local recurrence,78.0,78.0,,728.0,C25.0,TNM,,,1328.0,1328.0,unknown,,unknown
+111,DO49093,PACA-AU,,ICGC_0397,male,deceased,progression,distant recurrence/metastasis,75.0,75.0,,34.0,C25.0,TNM,,,538.0,538.0,unknown,,unknown
+112,DO49094,PACA-AU,,ICGC_0398,male,alive,progression,local recurrence,66.0,66.0,,,C25.0,TNM,,,1429.0,1429.0,unknown,,unknown
+113,DO49091,PACA-AU,,ICGC_0487,female,alive,progression,local recurrence,72.0,72.0,,,C25.0,TNM,,,573.0,573.0,unknown,,unknown
+114,DO49090,PACA-AU,PCAWG,ICGC_0486,female,deceased,progression,distant recurrence/metastasis,77.0,77.0,,65.0,C25.0,TNM,,,152.0,152.0,unknown,,unknown
+115,DO49079,PACA-AU,PCAWG,ICGC_0392,male,deceased,progression,distant recurrence/metastasis,50.0,50.0,,18.0,C25.0,TNM,,,332.0,332.0,unknown,,unknown
+116,DO49077,PACA-AU,,ICGC_0100,female,deceased,progression,distant recurrence/metastasis,34.0,34.0,,,C25.0,TNM,,,47.0,47.0,unknown,,unknown
+117,DO49078,PACA-AU,PCAWG,ICGC_0124,male,deceased,progression,local recurrence,79.0,79.0,,423.0,C25.0,TNM,,,465.0,465.0,unknown,,unknown
+118,DO49086,PACA-AU,,ICGC_0515,female,alive,progression,,76.0,76.0,,,C25.0,TNM,,,869.0,869.0,unknown,,unknown
+119,DO49087,PACA-AU,PCAWG,ICGC_0395,female,deceased,progression,,68.0,68.0,,,C25.0,TNM,,,260.0,260.0,unknown,,unknown
+120,DO49082,PACA-AU,,ICGC_0514,male,alive,stable,,65.0,65.0,,,C25.0,TNM,,,691.0,691.0,unknown,,unknown
+121,DO49080,PACA-AU,PCAWG,ICGC_0393,male,alive,stable,,60.0,60.0,,,C25.0,TNM,,,83.0,83.0,unknown,,unknown
+122,DO49081,PACA-AU,,ICGC_0394,male,deceased,progression,,62.0,62.0,,,C25.0,TNM,,,132.0,132.0,unknown,,unknown
+123,DO49075,PACA-AU,,ICGC_0499,female,deceased,progression,distant recurrence/metastasis,86.0,86.0,,203.0,C25.0,TNM,,,238.0,238.0,unknown,,unknown
+124,DO49076,PACA-AU,PCAWG,ICGC_0391,male,deceased,progression,distant recurrence/metastasis,64.0,64.0,,339.0,C25.0,TNM,,,480.0,480.0,unknown,,unknown
+125,DO49074,PACA-AU,PCAWG,ICGC_0354,male,deceased,progression,,49.0,49.0,,,C25.0,TNM,,,168.0,168.0,unknown,,unknown
+126,DO49099,PACA-AU,,ICGC_0401,female,deceased,progression,local recurrence,59.0,59.0,,131.0,C25.0,TNM,,,226.0,226.0,unknown,,unknown
+127,DO33296,PACA-AU,,ICGC_0078,female,deceased,progression,distant recurrence/metastasis,40.0,40.0,,395.0,C25.0,TNM,,,756.0,756.0,unknown,,unknown
+128,DO33280,PACA-AU,,ICGC_0097,male,deceased,,,64.0,64.0,,,C25.0,TNM,IA,,30.0,30.0,unknown,,unknown
+129,DO33272,PACA-AU,,ICGC_0095,male,deceased,,,62.0,62.0,,,C25.0,TNM,,,320.0,320.0,unknown,,unknown
+130,DO33288,PACA-AU,PCAWG,ICGC_0088,male,alive,progression,distant recurrence/metastasis,71.0,71.0,,486.0,C25.0,TNM,,,1408.0,1408.0,unknown,,unknown
+131,DO33256,PACA-AU,,ICGC_0118,female,deceased,progression,distant recurrence/metastasis,65.0,65.0,,334.0,C25.0,TNM,,,476.0,476.0,unknown,,unknown
+132,DO34584,PACA-AU,,ICGC_0182,female,alive,stable,,60.0,60.0,,,C25.0,TNM,,,903.0,903.0,unknown,,unknown
+133,DO33264,PACA-AU,PCAWG,ICGC_0207,male,deceased,,,80.0,80.0,,,C25.0,TNM,,,205.0,205.0,unknown,,unknown
+134,DO34568,PACA-AU,,ICGC_0074,male,deceased,progression,distant recurrence/metastasis,73.0,73.0,,343.0,C25.0,TNM,,,362.0,362.0,unknown,,unknown
+135,DO33232,PACA-AU,,ICGC_0101,female,alive,progression,local recurrence,70.0,70.0,,,C25.0,TNM,,,1107.0,1107.0,unknown,,unknown
+136,DO34560,PACA-AU,,ICGC_0073,male,deceased,progression,,65.0,65.0,,,C25.0,TNM,,,670.0,670.0,unknown,,unknown
+137,DO34576,PACA-AU,,ICGC_0148,female,alive,progression,distant recurrence/metastasis,62.0,62.0,,29.0,C25.0,,,,929.0,929.0,unknown,,unknown
+138,DO33248,PACA-AU,PCAWG,ICGC_0115,female,deceased,progression,distant recurrence/metastasis,70.0,70.0,,213.0,C25.0,TNM,,,796.0,796.0,unknown,,unknown
+139,DO33240,PACA-AU,,ICGC_0112,male,deceased,progression,local recurrence,51.0,51.0,,,C25.0,TNM,,,347.0,347.0,unknown,,unknown
+140,DO33216,PACA-AU,,ICGC_0110,male,deceased,progression,distant recurrence/metastasis,44.0,44.0,,121.0,C25.0,TNM,,,141.0,141.0,unknown,,unknown
+141,DO34544,PACA-AU,,ICGC_0236,male,alive,progression,distant recurrence/metastasis,76.0,76.0,,,C25.0,TNM,,,427.0,427.0,unknown,,unknown
+142,DO33224,PACA-AU,,ICGC_0208,male,deceased,stable,,55.0,55.0,,,C25.0,TNM,,,506.0,506.0,unknown,,unknown
+143,DO34552,PACA-AU,,ICGC_0237,female,deceased,progression,distant recurrence/metastasis,80.0,80.0,,,C25.0,TNM,,,183.0,183.0,unknown,,unknown
+144,DO34528,PACA-AU,,ICGC_0232,male,deceased,progression,,66.0,66.0,,,C25.0,TNM,,,140.0,140.0,unknown,,unknown
+145,DO34520,PACA-AU,,ICGC_0314,female,deceased,,,79.0,79.0,,,C25.0,TNM,,,10.0,10.0,unknown,,unknown
+146,DO34536,PACA-AU,,ICGC_0233,male,deceased,progression,distant recurrence/metastasis,68.0,68.0,,295.0,C25.0,TNM,,,464.0,464.0,unknown,,unknown
+147,DO33208,PACA-AU,PCAWG,ICGC_0205,male,deceased,,,59.0,59.0,,,C25.0,TNM,,,281.0,281.0,unknown,,unknown
+148,DO33200,PACA-AU,PCAWG,ICGC_0206,female,deceased,,,90.0,90.0,,,C25.0,TNM,,,109.0,109.0,unknown,,unknown
+149,DO34504,PACA-AU,PCAWG,ICGC_0230,male,deceased,progression,,37.0,37.0,,,C25.0,TNM,,,257.0,257.0,unknown,,unknown
+150,DO33176,PACA-AU,,ICGC_0093,male,deceased,progression,distant recurrence/metastasis,78.0,78.0,,60.0,C25.0,TNM,,,125.0,125.0,unknown,,unknown
+151,DO33192,PACA-AU,,ICGC_0104,male,deceased,progression,distant recurrence/metastasis,60.0,60.0,,517.0,C25.0,TNM,,,653.0,653.0,unknown,,unknown
+152,DO33184,PACA-AU,PCAWG,ICGC_0109,male,deceased,progression,local recurrence,70.0,70.0,,304.0,C25.0,TNM,,,913.0,913.0,unknown,,unknown
+153,DO34488,PACA-AU,,ICGC_0122,female,alive,stable,,67.0,67.0,,,C25.0,TNM,,,375.0,375.0,unknown,,unknown
+154,DO34480,PACA-AU,,ICGC_0219,female,alive,stable,,47.0,47.0,,,C25.0,TNM,,,634.0,634.0,unknown,,unknown
+155,DO33152,PACA-AU,PCAWG,ICGC_0105,male,deceased,progression,local recurrence,88.0,88.0,,365.0,C25.0,TNM,,,430.0,430.0,unknown,,unknown
+156,DO33168,PACA-AU,PCAWG,ICGC_0099,female,deceased,,,80.0,80.0,,,C25.0,TNM,,,8.0,8.0,unknown,,unknown
+157,DO34496,PACA-AU,,ICGC_0229,male,deceased,progression,distant recurrence/metastasis,73.0,73.0,,,C25.0,TNM,,,412.0,412.0,unknown,,unknown
+158,DO33160,PACA-AU,PCAWG,ICGC_0103,female,deceased,progression,distant recurrence/metastasis,78.0,78.0,,,C25.0,TNM,,,1091.0,1091.0,unknown,,unknown
+159,DO33136,PACA-AU,,ICGC_0092,male,alive,stable,,71.0,71.0,,,C25.0,TNM,,,1395.0,1395.0,unknown,,unknown
+160,DO34464,PACA-AU,,ICGC_0216,female,alive,progression,distant recurrence/metastasis,83.0,83.0,,,C25.0,TNM,,,663.0,663.0,unknown,,unknown
+161,DO33144,PACA-AU,,ICGC_0102,male,deceased,,,66.0,66.0,,,C25.0,TNM,,,460.0,460.0,unknown,,unknown
+162,DO34472,PACA-AU,,ICGC_0145,male,deceased,progression,distant recurrence/metastasis,55.0,55.0,,454.0,C25.0,TNM,,,515.0,515.0,unknown,,unknown
+163,DO34448,PACA-AU,PCAWG,ICGC_0215,female,deceased,progression,distant recurrence/metastasis,79.0,79.0,,,C25.0,TNM,,,719.0,719.0,unknown,,unknown
+164,DO34440,PACA-AU,,ICGC_0166,female,alive,stable,,75.0,75.0,,,C25.0,TNM,,,855.0,855.0,unknown,,unknown
+165,DO33112,PACA-AU,,ICGC_0106,male,deceased,progression,distant recurrence/metastasis,68.0,68.0,,91.0,C25.0,TNM,,,223.0,223.0,unknown,,unknown
+166,DO33128,PACA-AU,PCAWG,ICGC_0108,male,deceased,,,72.0,72.0,,,C25.0,TNM,,,423.0,423.0,unknown,,unknown
+167,DO34456,PACA-AU,,ICGC_0195,female,alive,stable,,79.0,79.0,,,C25.0,TNM,,,414.0,414.0,unknown,,unknown
+168,DO33120,PACA-AU,,ICGC_0107,male,deceased,,,59.0,59.0,,,C25.0,TNM,,,563.0,563.0,unknown,,unknown
+169,DO34424,PACA-AU,,ICGC_0238,male,deceased,progression,distant recurrence/metastasis,50.0,50.0,,,C25.0,TNM,,,284.0,284.0,unknown,,unknown
+170,DO33105,PACA-AU,,ICGC_0096,male,deceased,progression,distant recurrence/metastasis,78.0,78.0,,121.0,C25.0,TNM,IB,,142.0,142.0,unknown,,unknown
+171,DO34432,PACA-AU,PCAWG,ICGC_0214,female,deceased,progression,distant recurrence/metastasis,82.0,82.0,,,C25.0,TNM,,,400.0,400.0,unknown,,unknown
+172,DO34408,PACA-AU,,ICGC_0196,female,deceased,progression,,80.0,80.0,,,C25.0,TNM,,,96.0,440.0,unknown,,unknown
+173,DO34400,PACA-AU,,ICGC_0220,female,deceased,progression,,62.0,62.0,,,C25.0,TNM,,,813.0,813.0,unknown,,unknown
+174,DO34416,PACA-AU,,ICGC_0221,female,deceased,progression,,63.0,63.0,,,C25.0,TNM,,,650.0,650.0,unknown,,unknown
+175,DO33496,PACA-AU,,ICGC_0152,female,deceased,progression,distant recurrence/metastasis,76.0,76.0,,,C25.0,TNM,,,695.0,695.0,unknown,,unknown
+176,DO33472,PACA-AU,PCAWG,ICGC_0141,female,deceased,progression,distant recurrence/metastasis,75.0,75.0,,273.0,C25.0,TNM,,,388.0,388.0,unknown,,unknown
+177,DO33488,PACA-AU,PCAWG,ICGC_0150,male,alive,stable,,61.0,61.0,,,C25.0,TNM,,,844.0,844.0,unknown,,unknown
+178,DO33480,PACA-AU,PCAWG,ICGC_0146,male,alive,stable,,52.0,52.0,,,C25.0,TNM,,,1054.0,1054.0,unknown,,unknown
+179,DO34704,PACA-AU,,ICGC_0335,male,deceased,progression,distant recurrence/metastasis,63.0,63.0,,,C25.0,TNM,,,484.0,484.0,unknown,,unknown
+180,DO34712,PACA-AU,,ICGC_0198,female,alive,stable,,74.0,74.0,,,C25.0,TNM,,,417.0,417.0,unknown,,unknown
+181,DO34785,PACA-AU,PCAWG,ICGC_0304,female,alive,stable,,67.0,67.0,,,C25.0,TNM,,,721.0,721.0,unknown,,unknown
+182,DO33456,PACA-AU,,ICGC_0130,male,deceased,progression,distant recurrence/metastasis,67.0,67.0,,334.0,C25.0,TNM,,,399.0,399.0,unknown,,unknown
+183,DO34793,PACA-AU,PCAWG,ICGC_0312,male,deceased,progression,distant recurrence/metastasis,56.0,56.0,,,C25.0,TNM,,,427.0,427.0,unknown,,unknown
+184,DO33464,PACA-AU,,ICGC_0132,male,deceased,progression,distant recurrence/metastasis,65.0,65.0,,,C25.0,TNM,,,615.0,615.0,unknown,,unknown
+185,DO34768,PACA-AU,,ICGC_0298,male,alive,progression,,63.0,63.0,,,C25.0,TNM,,,582.0,582.0,unknown,,unknown
+186,DO34769,PACA-AU,,ICGC_0305,male,alive,stable,,73.0,73.0,,,C25.0,TNM,,,493.0,493.0,unknown,,unknown
+187,DO33432,PACA-AU,,ICGC_0131,male,deceased,stable,,69.0,69.0,,,C25.0,TNM,,,656.0,656.0,unknown,,unknown
+188,DO34760,PACA-AU,,ICGC_0307,male,deceased,progression,,76.0,76.0,,,C25.0,TNM,,,610.0,610.0,unknown,,unknown
+189,DO46741,PACA-AU,,ICGC_0475,male,alive,stable,,66.0,66.0,,,C25.0,,,,254.0,254.0,unknown,,unknown
+190,DO33448,PACA-AU,,ICGC_0081,male,alive,stable,,55.0,55.0,,,C25.0,TNM,,,1490.0,1490.0,unknown,,unknown
+191,DO34777,PACA-AU,,ICGC_0299,male,alive,stable,,66.0,66.0,,,C25.0,TNM,,,589.0,589.0,unknown,,unknown
+192,DO33440,PACA-AU,,ICGC_0091,male,deceased,,,72.0,72.0,,,C25.0,TNM,,,8.0,8.0,unknown,,unknown
+193,DO46736,PACA-AU,,ICGC_0471,male,deceased,progression,,62.0,62.0,,,C25.0,,,,1079.0,1079.0,unknown,,unknown
+194,DO46733,PACA-AU,,ICGC_0466,female,deceased,progression,,64.0,64.0,,,C25.0,,,,267.0,267.0,unknown,,unknown
+195,DO46730,PACA-AU,,ICGC_0463,male,deceased,progression,,66.0,66.0,,,C25.0,,,,1103.0,1103.0,unknown,,unknown
+196,DO33416,PACA-AU,,ICGC_0133,female,alive,progression,local recurrence,59.0,59.0,,,C25.0,TNM,,,1051.0,1051.0,unknown,,unknown
+197,DO34744,PACA-AU,,ICGC_0302,male,alive,progression,distant recurrence/metastasis,65.0,65.0,,,C25.0,TNM,,,475.0,475.0,unknown,,unknown
+198,DO46739,PACA-AU,,ICGC_0473,female,deceased,progression,,56.0,56.0,,,C25.0,,,,527.0,527.0,unknown,,unknown
+199,DO46724,PACA-AU,,ICGC_0484,male,deceased,progression,,68.0,68.0,,,C25.0,,,,177.0,177.0,unknown,,unknown
+200,DO46727,PACA-AU,,ICGC_0485,female,alive,stable,,78.0,78.0,,,C25.0,,,,168.0,168.0,unknown,,unknown
+201,DO46721,PACA-AU,,ICGC_0483,male,alive,stable,,40.0,40.0,,,C25.0,,,,321.0,321.0,unknown,,unknown
+202,DO34752,PACA-AU,,ICGC_0308,male,alive,stable,,60.0,60.0,,,C25.0,TNM,,,252.0,252.0,unknown,,unknown
+203,DO33424,PACA-AU,,ICGC_0138,male,alive,stable,,77.0,77.0,,,C25.0,TNM,,,1058.0,1058.0,unknown,,unknown
+204,DO46715,PACA-AU,,ICGC_0481,female,alive,stable,,,,,,C25.0,,,,545.0,545.0,unknown,,unknown
+205,DO46712,PACA-AU,,ICGC_0480,male,alive,stable,,55.0,55.0,,,C25.0,,,,44.0,44.0,unknown,,unknown
+206,DO34728,PACA-AU,PCAWG,ICGC_0313,female,alive,stable,,77.0,77.0,,,C25.0,TNM,,,508.0,508.0,unknown,,unknown
+207,DO34720,PACA-AU,PCAWG,ICGC_0301,male,alive,stable,,68.0,68.0,,,C25.0,TNM,,,555.0,555.0,unknown,,unknown
+208,DO46718,PACA-AU,,ICGC_0482,female,alive,stable,,66.0,66.0,,,C25.0,,,,309.0,309.0,unknown,,unknown
+209,DO46703,PACA-AU,,ICGC_0477,male,deceased,progression,,,,,,C25.0,,,,203.0,203.0,unknown,,unknown
+210,DO46700,PACA-AU,,ICGC_0476,male,deceased,progression,,61.0,61.0,,,C25.0,,,,518.0,518.0,unknown,,unknown
+211,DO33408,PACA-AU,PCAWG,ICGC_0143,female,alive,stable,,68.0,68.0,,,C25.0,TNM,,,909.0,909.0,unknown,,unknown
+212,DO34736,PACA-AU,PCAWG,ICGC_0303,female,deceased,progression,distant recurrence/metastasis,78.0,78.0,,,C25.0,TNM,,,203.0,203.0,unknown,,unknown
+213,DO33400,PACA-AU,PCAWG,ICGC_0140,female,alive,stable,,76.0,76.0,,,C25.0,TNM,,,1043.0,1043.0,unknown,,unknown
+214,DO46706,PACA-AU,,ICGC_0478,male,alive,stable,,76.0,76.0,,,C25.0,,,,379.0,379.0,unknown,,unknown
+215,DO46709,PACA-AU,,ICGC_0479,male,alive,stable,,60.0,60.0,,,C25.0,,,,84.0,84.0,unknown,,unknown
+216,DO33392,PACA-AU,PCAWG,ICGC_0139,male,alive,stable,,70.0,70.0,,,C25.0,TNM,,,1014.0,1014.0,unknown,,unknown
+217,DO46694,PACA-AU,,ICGC_0472,male,deceased,progression,,72.0,72.0,,,C25.0,,,,543.0,543.0,unknown,,unknown
+218,DO46697,PACA-AU,,ICGC_0474,male,deceased,progression,,81.0,81.0,,,C25.0,,,,279.0,279.0,unknown,,unknown
+219,DO46691,PACA-AU,,ICGC_0470,male,deceased,progression,,75.0,75.0,,,C25.0,,,,461.0,461.0,unknown,,unknown
+220,DO33376,PACA-AU,PCAWG,ICGC_0135,female,alive,stable,,62.0,62.0,,,C25.0,TNM,,,909.0,909.0,unknown,,unknown
+221,DO46688,PACA-AU,,ICGC_0469,female,alive,stable,,78.0,78.0,,,C25.0,,,,1530.0,1530.0,unknown,,unknown
+222,DO46685,PACA-AU,,ICGC_0468,female,deceased,progression,,67.0,67.0,,,C25.0,,,,128.0,128.0,unknown,,unknown
+223,DO46682,PACA-AU,,ICGC_0467,male,deceased,,,64.0,64.0,,,C25.0,,,,1263.0,1263.0,unknown,,unknown
+224,DO46676,PACA-AU,,ICGC_0464,female,deceased,progression,,46.0,46.0,,,C25.0,,,,755.0,755.0,unknown,,unknown
+225,DO46679,PACA-AU,,ICGC_0465,female,alive,stable,,64.0,64.0,,,C25.0,,,,1607.0,1607.0,unknown,,unknown
+226,DO46673,PACA-AU,,ICGC_0462,male,deceased,progression,,69.0,69.0,,,C25.0,,,,319.0,319.0,unknown,,unknown
+227,DO34688,PACA-AU,,ICGC_0194,female,deceased,progression,distant recurrence/metastasis,57.0,57.0,,57.0,C25.0,TNM,,,303.0,303.0,unknown,,unknown
+228,DO33352,PACA-AU,,ICGC_0083,female,deceased,progression,distant recurrence/metastasis,67.0,67.0,,,C25.0,TNM,,,1003.0,1003.0,unknown,,unknown
+229,DO34680,PACA-AU,PCAWG,ICGC_0192,male,deceased,progression,distant recurrence/metastasis,75.0,75.0,,46.0,C25.0,TNM,,,99.0,99.0,unknown,,unknown
+230,DO33368,PACA-AU,PCAWG,ICGC_0134,male,deceased,progression,distant recurrence/metastasis,81.0,81.0,,30.0,C25.0,TNM,,,98.0,98.0,unknown,,unknown
+231,DO34696,PACA-AU,PCAWG,ICGC_0296,male,alive,stable,,75.0,75.0,,,C25.0,TNM,,,689.0,689.0,unknown,,unknown
+232,DO33360,PACA-AU,,ICGC_0117,female,deceased,progression,local recurrence,64.0,64.0,,,C25.0,TNM,,,916.0,916.0,unknown,,unknown
+233,DO34664,PACA-AU,,ICGC_0190,male,deceased,progression,,67.0,67.0,,,C25.0,TNM,,,113.0,113.0,unknown,,unknown
+234,DO33336,PACA-AU,,ICGC_0116,female,deceased,progression,distant recurrence/metastasis,67.0,67.0,,365.0,C25.0,TNM,,,451.0,451.0,unknown,,unknown
+235,DO33344,PACA-AU,PCAWG,ICGC_0087,male,deceased,progression,distant recurrence/metastasis,70.0,70.0,,243.0,C25.0,TNM,,,361.0,361.0,unknown,,unknown
+236,DO34672,PACA-AU,,ICGC_0191,male,deceased,progression,distant recurrence/metastasis,62.0,62.0,,,C25.0,TNM,,,356.0,356.0,unknown,,unknown
+237,DO34648,PACA-AU,,ICGC_0162,female,alive,stable,,65.0,65.0,,,C25.0,TNM,,,553.0,553.0,unknown,,unknown
+238,DO33312,PACA-AU,,ICGC_0121,female,deceased,progression,distant recurrence/metastasis,53.0,53.0,,,C25.0,TNM,,,130.0,130.0,unknown,,unknown
+239,DO34640,PACA-AU,PCAWG,ICGC_0227,female,deceased,progression,distant recurrence/metastasis,49.0,49.0,,,C25.0,TNM,,,287.0,287.0,unknown,,unknown
+240,DO33328,PACA-AU,,ICGC_0111,male,alive,progression,local recurrence,63.0,63.0,,,C25.0,TNM,,,906.0,906.0,unknown,,unknown
+241,DO34656,PACA-AU,PCAWG,ICGC_0185,female,alive,progression,distant recurrence/metastasis,61.0,61.0,,,C25.0,TNM,,,834.0,834.0,unknown,,unknown
+242,DO33320,PACA-AU,,ICGC_0123,female,deceased,progression,distant recurrence/metastasis,65.0,65.0,,,C25.0,TNM,,,1122.0,1122.0,unknown,,unknown
+243,DO34624,PACA-AU,,ICGC_0225,male,alive,stable,,73.0,73.0,,,C25.0,TNM,,,260.0,260.0,unknown,,unknown
+244,DO33304,PACA-AU,,ICGC_0080,female,deceased,progression,distant recurrence/metastasis,68.0,68.0,,700.0,C25.0,TNM,IB,,984.0,984.0,unknown,,unknown
+245,DO34632,PACA-AU,,ICGC_0226,male,alive,stable,,58.0,58.0,,,C25.0,TNM,,,523.0,523.0,unknown,,unknown
+246,DO34608,PACA-AU,PCAWG,ICGC_0201,female,deceased,progression,distant recurrence/metastasis,72.0,72.0,,350.0,C25.0,TNM,,,709.0,709.0,unknown,,unknown
+247,DO34600,PACA-AU,PCAWG,ICGC_0199,male,deceased,progression,,77.0,77.0,,433.0,C25.0,TNM,,,537.0,537.0,unknown,,unknown
+248,DO34616,PACA-AU,PCAWG,ICGC_0224,female,alive,stable,,68.0,68.0,,,C25.0,TNM,,,666.0,666.0,unknown,,unknown
+249,DO34144,PACA-AU,,ICGC_0292,female,alive,stable,,71.0,71.0,,,C25.0,TNM,,,296.0,296.0,unknown,,unknown
+250,DO34160,PACA-AU,,ICGC_0294,female,alive,stable,,60.0,60.0,,,C25.0,TNM,,,290.0,290.0,unknown,,unknown
+251,DO34152,PACA-AU,,ICGC_0293,female,alive,stable,,69.0,69.0,,,C25.0,TNM,,,297.0,297.0,unknown,,unknown
+252,DO34128,PACA-AU,,ICGC_0290,male,alive,stable,,76.0,76.0,,,C25.0,TNM,,,484.0,484.0,unknown,,unknown
+253,DO34120,PACA-AU,,ICGC_0289,female,alive,progression,,68.0,68.0,,,C25.0,TNM,,,480.0,480.0,unknown,,unknown
+254,DO34136,PACA-AU,,ICGC_0291,male,alive,stable,,51.0,51.0,,,C25.0,TNM,,,385.0,385.0,unknown,,unknown
+255,DO34112,PACA-AU,,ICGC_0288,female,alive,progression,distant recurrence/metastasis,51.0,51.0,,,C25.0,TNM,,,492.0,492.0,unknown,,unknown
+256,DO34192,PACA-AU,,ICGC_0173,male,deceased,progression,distant recurrence/metastasis,55.0,55.0,,177.0,C25.0,TNM,,,478.0,478.0,unknown,,unknown
+257,DO34184,PACA-AU,,ICGC_0167,female,alive,progression,distant recurrence/metastasis,66.0,66.0,,,C25.0,TNM,,,1042.0,1042.0,unknown,,unknown
+258,DO34168,PACA-AU,,ICGC_0158,female,alive,stable,,60.0,60.0,,,C25.0,TNM,,,224.0,224.0,unknown,,unknown
+259,DO34176,PACA-AU,,ICGC_0161,male,deceased,progression,,84.0,84.0,,,C25.0,TNM,,,110.0,110.0,unknown,,unknown
+260,DO34024,PACA-AU,,ICGC_0277,male,alive,stable,,72.0,72.0,,,C25.0,TNM,,,388.0,388.0,unknown,,unknown
+261,DO34032,PACA-AU,,ICGC_0278,female,alive,stable,,55.0,55.0,,,C25.0,TNM,,,592.0,592.0,unknown,,unknown
+262,DO34008,PACA-AU,,ICGC_0275,male,alive,stable,,58.0,58.0,,,C25.0,TNM,,,408.0,408.0,unknown,,unknown
+263,DO34000,PACA-AU,,ICGC_0274,male,alive,stable,,75.0,75.0,,,C25.0,TNM,,,422.0,422.0,unknown,,unknown
+264,DO34016,PACA-AU,,ICGC_0276,male,alive,stable,,67.0,67.0,,,C25.0,TNM,,,407.0,407.0,unknown,,unknown
+265,DO34088,PACA-AU,,ICGC_0285,female,deceased,,,75.0,75.0,,,C25.0,TNM,,,34.0,34.0,unknown,,unknown
+266,DO34096,PACA-AU,,ICGC_0286,male,deceased,progression,,71.0,71.0,,,C25.0,TNM,,,333.0,333.0,unknown,,unknown
+267,DO34072,PACA-AU,,ICGC_0283,female,alive,stable,,69.0,69.0,,,C25.0,TNM,,,337.0,337.0,unknown,,unknown
+268,DO34064,PACA-AU,,ICGC_0282,female,alive,stable,,65.0,65.0,,,C25.0,TNM,,,340.0,340.0,unknown,,unknown
+269,DO34080,PACA-AU,,ICGC_0284,female,alive,stable,,74.0,74.0,,,C25.0,TNM,,,304.0,304.0,unknown,,unknown
+270,DO34048,PACA-AU,,ICGC_0280,male,alive,stable,,70.0,70.0,,,C25.0,TNM,,,351.0,351.0,unknown,,unknown
+271,DO34040,PACA-AU,,ICGC_0279,male,alive,stable,,78.0,78.0,,,C25.0,TNM,,,359.0,359.0,unknown,,unknown
+272,DO34056,PACA-AU,,ICGC_0281,female,alive,stable,,73.0,73.0,,,C25.0,TNM,,,350.0,350.0,unknown,,unknown
+273,DO33056,PACA-AU,,ICGC_0086,male,deceased,,,42.0,42.0,,,C25.0,TNM,,,216.0,216.0,unknown,,unknown
+274,DO34384,PACA-AU,,ICGC_0218,male,deceased,progression,distant recurrence/metastasis,71.0,71.0,,,C25.0,TNM,,,587.0,587.0,unknown,,unknown
+275,DO33070,PACA-AU,,ICGC_0089,female,deceased,progression,distant recurrence/metastasis,69.0,69.0,,213.0,C25.0,TNM,,,423.0,423.0,unknown,,unknown
+276,DO34392,PACA-AU,,ICGC_0234,female,alive,progression,distant recurrence/metastasis,63.0,63.0,,,C25.0,TNM,,,715.0,715.0,unknown,,unknown
+277,DO33063,PACA-AU,,ICGC_0077,female,deceased,progression,,63.0,63.0,,213.0,C25.0,TNM,,,549.0,549.0,unknown,,unknown
+278,DO34368,PACA-AU,PCAWG,ICGC_0235,female,deceased,progression,distant recurrence/metastasis,64.0,64.0,,342.0,C25.0,TNM,,,537.0,537.0,unknown,,unknown
+279,DO33037,PACA-AU,,ICGC_0005,male,deceased,progression,distant recurrence/metastasis,63.0,63.0,,371.0,C25.2,TNM,,,641.0,641.0,unknown,,unknown
+280,DO33032,PACA-AU,PCAWG,ICGC_0067,male,deceased,progression,distant recurrence/metastasis,64.0,64.0,65.0,,C25.0,TNM,,,495.0,495.0,unknown,,unknown
+281,DO34360,PACA-AU,,ICGC_0177,male,alive,progression,local recurrence,45.0,45.0,,,C25.0,TNM,,,888.0,888.0,unknown,,unknown
+282,DO33049,PACA-AU,,ICGC_0085,male,deceased,,,54.0,54.0,,,C25.0,TNM,,,324.0,324.0,unknown,,unknown
+283,DO33043,PACA-AU,,ICGC_0084,female,deceased,progression,distant recurrence/metastasis,60.0,60.0,,182.0,C25.0,TNM,,,381.0,381.0,unknown,,unknown
+284,DO34376,PACA-AU,,ICGC_0137,male,deceased,progression,,61.0,61.0,,,C25.0,TNM,,,179.0,179.0,unknown,,unknown
+285,DO33042,PACA-AU,PCAWG,ICGC_0052,male,alive,stable,,76.0,76.0,77.0,246.0,C25.0,TNM,,,1424.0,1424.0,unknown,,unknown
+286,DO33016,PACA-AU,PCAWG,ICGC_0063,male,alive,stable,,54.0,54.0,55.0,,C25.0,TNM,,,1275.0,1275.0,unknown,,unknown
+287,DO34344,PACA-AU,,ICGC_0203,female,alive,progression,distant recurrence/metastasis,68.0,68.0,,342.0,C25.0,TNM,,,749.0,749.0,unknown,,unknown
+288,DO33012,PACA-AU,,ICGC_0062,male,deceased,stable,,70.0,70.0,,,C25.0,TNM,T2N0MX,,1.0,1.0,unknown,,unknown
+289,DO33028,PACA-AU,PCAWG,ICGC_0066,male,deceased,progression,distant recurrence/metastasis,58.0,58.0,58.0,157.0,C25.0,TNM,,,311.0,311.0,unknown,,unknown
+290,DO33024,PACA-AU,,ICGC_0065,male,deceased,,,63.0,63.0,,,C25.0,TNM,,,127.0,127.0,unknown,,unknown
+291,DO33020,PACA-AU,,ICGC_0064,male,deceased,progression,distant recurrence/metastasis,78.0,78.0,79.0,,C25.0,TNM,,,434.0,434.0,unknown,,unknown
+292,DO34328,PACA-AU,,ICGC_0228,male,deceased,progression,,67.0,67.0,,,C25.0,TNM,,,468.0,468.0,unknown,,unknown
+293,DO34320,PACA-AU,,ICGC_0157,female,alive,stable,,62.0,62.0,,,C25.0,TNM,,,947.0,947.0,unknown,,unknown
+294,DO33008,PACA-AU,PCAWG,ICGC_0061,female,deceased,progression,distant recurrence/metastasis,56.0,56.0,57.0,99.0,C25.0,TNM,,,970.0,970.0,unknown,,unknown
+295,DO33004,PACA-AU,,ICGC_0060,male,alive,progression,local recurrence,47.0,47.0,48.0,,C25.0,TNM,,,596.0,596.0,unknown,,unknown
+296,DO34336,PACA-AU,PCAWG,ICGC_0217,female,alive,stable,,70.0,70.0,,,C25.0,TNM,,,743.0,743.0,unknown,,unknown
+297,DO33000,PACA-AU,PCAWG,ICGC_0059,male,alive,progression,distant recurrence/metastasis,68.0,68.0,69.0,,C25.0,TNM,,,1258.0,1258.0,unknown,,unknown
+298,DO33098,PACA-AU,,ICGC_0079,male,deceased,progression,distant recurrence/metastasis,68.0,68.0,,456.0,C25.0,TNM,,,746.0,746.0,unknown,,unknown
+299,DO33077,PACA-AU,PCAWG,ICGC_0075,female,deceased,,,76.0,76.0,,,C25.0,TNM,,,476.0,476.0,unknown,,unknown
+300,DO33091,PACA-AU,,ICGC_0076,male,deceased,,,56.0,56.0,,,C25.0,TNM,,,142.0,142.0,unknown,,unknown
+301,DO33084,PACA-AU,,ICGC_0090,female,deceased,,,72.0,72.0,,,C25.0,TNM,,,6.0,6.0,unknown,,unknown
+302,DO34304,PACA-AU,,ICGC_0128,female,deceased,progression,distant recurrence/metastasis,68.0,68.0,,301.0,C25.0,TNM,,,638.0,638.0,unknown,,unknown
+303,DO34312,PACA-AU,PCAWG,ICGC_0315,female,deceased,progression,distant recurrence/metastasis,58.0,58.0,,,C25.0,TNM,,,226.0,226.0,unknown,,unknown
+304,DO34264,PACA-AU,PCAWG,ICGC_0069,female,deceased,progression,local recurrence,63.0,63.0,,702.0,C25.0,TNM,,,1144.0,1144.0,unknown,,unknown
+305,DO34280,PACA-AU,,ICGC_0197,female,alive,stable,,72.0,72.0,,,C25.0,TNM,,,798.0,798.0,unknown,,unknown
+306,DO34272,PACA-AU,,ICGC_0202,male,alive,stable,,46.0,46.0,,,C25.0,TNM,,,713.0,713.0,unknown,,unknown
+307,DO34248,PACA-AU,,ICGC_0184,female,alive,progression,local recurrence,67.0,67.0,,334.0,C25.0,TNM,,,785.0,785.0,unknown,,unknown
+308,DO34240,PACA-AU,PCAWG,ICGC_0188,male,deceased,progression,distant recurrence/metastasis,72.0,72.0,,50.0,C25.0,TNM,,,236.0,236.0,unknown,,unknown
+309,DO34256,PACA-AU,,ICGC_0187,female,alive,stable,,52.0,52.0,,,C25.0,TNM,,,685.0,685.0,unknown,,unknown
+310,DO34232,PACA-AU,,ICGC_0179,female,alive,progression,distant recurrence/metastasis,69.0,69.0,,,C25.0,TNM,,,905.0,905.0,unknown,,unknown
+311,DO34208,PACA-AU,,ICGC_0178,male,deceased,progression,distant recurrence/metastasis,66.0,66.0,,126.0,C25.0,TNM,,,305.0,305.0,unknown,,unknown
+312,DO34200,PACA-AU,,ICGC_0174,female,alive,progression,distant recurrence/metastasis,72.0,72.0,,,C25.0,TNM,,,985.0,985.0,unknown,,unknown
+313,DO34216,PACA-AU,,ICGC_0180,female,alive,progression,distant recurrence/metastasis,52.0,52.0,,254.0,C25.0,TNM,,,864.0,864.0,unknown,,unknown
+314,DO34288,PACA-AU,PCAWG,ICGC_0223,female,deceased,progression,,83.0,83.0,,,C25.0,TNM,,,220.0,220.0,unknown,,unknown
+315,DO34296,PACA-AU,,ICGC_0189,male,alive,stable,,62.0,62.0,,,C25.0,TNM,,,832.0,832.0,unknown,,unknown
+316,DO32817,PACA-AU,,ICGC_0327,male,deceased,,,,,,,,,,,,,unknown,,unknown
+317,DO32819,PACA-AU,,ICGC_0328,male,deceased,,,,85.0,,,,,,,,,unknown,,unknown
+318,DO33976,PACA-AU,,ICGC_0210,male,deceased,progression,,71.0,71.0,,,C25.0,TNM,,,113.0,113.0,unknown,,unknown
+319,DO33984,PACA-AU,PCAWG,ICGC_0144,male,alive,stable,,64.0,64.0,,,C25.0,TNM,,,847.0,847.0,unknown,,unknown
+320,DO33952,PACA-AU,,ICGC_0070,male,deceased,progression,local recurrence,72.0,72.0,,317.0,C25.0,TNM,,,1392.0,1392.0,unknown,,unknown
+321,DO33968,PACA-AU,,ICGC_0082,female,deceased,progression,,68.0,68.0,,,C25.0,TNM,,,152.0,152.0,unknown,,unknown
+322,DO33960,PACA-AU,PCAWG,ICGC_0212,male,deceased,progression,local recurrence,57.0,57.0,,,C25.0,TNM,,,602.0,616.0,unknown,,unknown
+323,DO33936,PACA-AU,,ICGC_0211,female,deceased,progression,,71.0,71.0,,,C25.0,TNM,,,486.0,486.0,unknown,,unknown
+324,DO33944,PACA-AU,,ICGC_0213,female,deceased,progression,,78.0,78.0,,,C25.0,TNM,,,330.0,330.0,unknown,,unknown
+325,DO33912,PACA-AU,,ICGC_0270,female,deceased,progression,local recurrence,54.0,54.0,,,C25.0,TNM,,,1081.0,1081.0,unknown,,unknown
+326,DO33928,PACA-AU,,ICGC_0272,male,deceased,progression,distant recurrence/metastasis,73.0,73.0,,,C25.0,TNM,,,1157.0,1157.0,unknown,,unknown
+327,DO33920,PACA-AU,,ICGC_0271,male,deceased,progression,distant recurrence/metastasis,70.0,70.0,,,C25.0,TNM,,,957.0,957.0,unknown,,unknown
+328,DO33992,PACA-AU,,ICGC_0273,female,deceased,progression,distant recurrence/metastasis,67.0,67.0,,,C25.0,TNM,,,507.0,507.0,unknown,,unknown
+329,DO32988,PACA-AU,,ICGC_0056,female,alive,progression,distant recurrence/metastasis,61.0,61.0,62.0,,C25.0,TNM,,,1170.0,1170.0,unknown,,unknown
+330,DO32984,PACA-AU,PCAWG,ICGC_0055,male,deceased,progression,distant recurrence/metastasis,61.0,61.0,62.0,104.0,C25.2,TNM,,,415.0,415.0,unknown,,unknown
+331,DO32980,PACA-AU,PCAWG,ICGC_0054,female,deceased,progression,distant recurrence/metastasis,72.0,72.0,,,C25.2,TNM,,,78.0,78.0,unknown,,unknown
+332,DO32996,PACA-AU,,ICGC_0058,female,deceased,progression,distant recurrence/metastasis,59.0,59.0,60.0,228.0,C25.0,TNM,,,280.0,280.0,unknown,,unknown
+333,DO32992,PACA-AU,,ICGC_0057,male,deceased,progression,distant recurrence/metastasis,64.0,64.0,,68.0,C25.0,TNM,,,363.0,363.0,unknown,,unknown
+334,DO32968,PACA-AU,,ICGC_0050,male,alive,progression,local recurrence,78.0,78.0,80.0,197.0,C25.0,TNM,,,1456.0,1456.0,unknown,,unknown
+335,DO32964,PACA-AU,,ICGC_0049,male,deceased,progression,local recurrence,83.0,83.0,,448.0,C25.0,TNM,,,516.0,516.0,unknown,,unknown
+336,DO32960,PACA-AU,PCAWG,ICGC_0048,female,alive,stable,,65.0,65.0,66.0,,C25.0,TNM,,,1258.0,1258.0,unknown,,unknown
+337,DO32976,PACA-AU,PCAWG,ICGC_0053,female,deceased,progression,distant recurrence/metastasis,73.0,73.0,75.0,448.0,C25.0,TNM,,,610.0,610.0,unknown,,unknown
+338,DO32972,PACA-AU,PCAWG,ICGC_0051,male,deceased,progression,distant recurrence/metastasis,66.0,66.0,67.0,293.0,C25.0,TNM,,,605.0,605.0,unknown,,unknown
+339,DO32948,PACA-AU,,ICGC_0045,male,deceased,stable,,76.0,76.0,,,C25.0,TNM,,,28.0,28.0,unknown,,unknown
+340,DO32944,PACA-AU,,ICGC_0044,female,alive,stable,,72.0,72.0,73.0,,C25.0,TNM,,,1424.0,1424.0,unknown,,unknown
+341,DO32940,PACA-AU,,ICGC_0043,male,deceased,progression,distant recurrence/metastasis,52.0,52.0,53.0,540.0,C25.0,TNM,,,717.0,717.0,unknown,,unknown
+342,DO32956,PACA-AU,,ICGC_0047,male,alive,stable,,71.0,71.0,72.0,,C25.0,TNM,,,1448.0,1448.0,unknown,,unknown
+343,DO32952,PACA-AU,,ICGC_0046,male,deceased,progression,distant recurrence/metastasis,72.0,72.0,,202.0,C25.1,TNM,,,234.0,234.0,unknown,,unknown
+344,DO32928,PACA-AU,,ICGC_0040,male,deceased,progression,local recurrence,77.0,77.0,,277.0,C25.0,TNM,,,304.0,304.0,unknown,,unknown
+345,DO32924,PACA-AU,,ICGC_0039,male,deceased,progression,distant recurrence/metastasis,67.0,67.0,,249.0,C25.0,TNM,,,313.0,313.0,unknown,,unknown
+346,DO32920,PACA-AU,,ICGC_0038,male,deceased,,,57.0,57.0,,,C25.0,TNM,T3N1MX,,201.0,201.0,unknown,,unknown
+347,DO32936,PACA-AU,,ICGC_0042,male,deceased,progression,distant recurrence/metastasis,68.0,68.0,,506.0,C25.0,TNM,,,552.0,552.0,unknown,,unknown
+348,DO32932,PACA-AU,,ICGC_0041,male,alive,stable,,74.0,74.0,75.0,,C25.0,TNM,,,1502.0,1502.0,unknown,,unknown
+349,DO32908,PACA-AU,,ICGC_0035,female,alive,stable,,77.0,77.0,78.0,,C25.0,TNM,,,1478.0,1478.0,unknown,,unknown
+350,DO32904,PACA-AU,,ICGC_0034,female,deceased,progression,local recurrence,78.0,78.0,,,C25.2,TNM,T3N0MX,,92.0,92.0,unknown,,unknown
+351,DO32900,PACA-AU,PCAWG,ICGC_0033,male,deceased,progression,distant recurrence/metastasis,51.0,51.0,53.0,363.0,C25.0,TNM,,,768.0,768.0,unknown,,unknown
+352,DO32916,PACA-AU,PCAWG,ICGC_0037,male,deceased,progression,distant recurrence/metastasis,78.0,78.0,,119.0,C25.1,TNM,,,154.0,154.0,unknown,,unknown
+353,DO32912,PACA-AU,,ICGC_0036,male,alive,stable,,64.0,64.0,65.0,241.0,C25.0,TNM,,,1253.0,1253.0,unknown,,unknown
+354,DO32887,PACA-AU,,ICGC_0029,female,deceased,progression,distant recurrence/metastasis,79.0,79.0,,202.0,C25.0,TNM,,,359.0,359.0,unknown,,unknown
+355,DO32884,PACA-AU,,ICGC_0028,female,deceased,progression,distant recurrence/metastasis,55.0,55.0,,450.0,C25.0,TNM,,,507.0,507.0,unknown,,unknown
+356,DO32881,PACA-AU,,ICGC_0027,male,deceased,progression,distant recurrence/metastasis,64.0,64.0,,189.0,C25.1,TNM,,,409.0,409.0,unknown,,unknown
+357,DO32893,PACA-AU,PCAWG,ICGC_0031,female,deceased,progression,distant recurrence/metastasis,61.0,61.0,63.0,438.0,C25.0,TNM,,,1077.0,1077.0,unknown,,unknown
+358,DO32896,PACA-AU,,ICGC_0032,female,deceased,progression,distant recurrence/metastasis,66.0,66.0,68.0,632.0,C25.0,TNM,,,835.0,835.0,unknown,,unknown
+359,DO32890,PACA-AU,,ICGC_0030,female,deceased,,,79.0,79.0,,,C25.0,TNM,,,199.0,199.0,unknown,,unknown
+360,DO32869,PACA-AU,,ICGC_0023,male,deceased,progression,distant recurrence/metastasis,49.0,49.0,51.0,,C25.0,TNM,,,942.0,942.0,unknown,,unknown
+361,DO32866,PACA-AU,,ICGC_0022,female,deceased,,,87.0,87.0,,,C25.1,TNM,,,36.0,36.0,unknown,,unknown
+362,DO32860,PACA-AU,PCAWG,ICGC_0020,male,deceased,progression,distant recurrence/metastasis,57.0,57.0,59.0,421.0,C25.0,TNM,,,1259.0,1259.0,unknown,,unknown
+363,DO32863,PACA-AU,PCAWG,ICGC_0021,male,deceased,progression,distant recurrence/metastasis,60.0,60.0,,380.0,C25.0,TNM,,,715.0,715.0,unknown,,unknown
+364,DO32875,PACA-AU,PCAWG,ICGC_0025,male,deceased,progression,distant recurrence/metastasis,69.0,69.0,,139.0,C25.0,TNM,,,348.0,348.0,unknown,,unknown
+365,DO32878,PACA-AU,PCAWG,ICGC_0026,female,deceased,progression,distant recurrence/metastasis,69.0,69.0,,223.0,C25.0,TNM,,,260.0,260.0,unknown,,unknown
+366,DO32872,PACA-AU,,ICGC_0024,male,alive,stable,,69.0,69.0,71.0,,C25.0,TNM,,,1639.0,1639.0,unknown,,unknown
+367,DO32847,PACA-AU,,ICGC_0014,female,deceased,progression,local recurrence,47.0,47.0,49.0,239.0,C25.0,TNM,,,1200.0,1200.0,unknown,,unknown
+368,DO32849,PACA-AU,,ICGC_0015,male,deceased,progression,distant recurrence/metastasis,65.0,65.0,,293.0,C25.0,TNM,,,315.0,315.0,unknown,,unknown
+369,DO32843,PACA-AU,,ICGC_0012,female,deceased,progression,distant recurrence/metastasis,60.0,60.0,62.0,362.0,C25.0,TNM,,,1048.0,1048.0,unknown,,unknown
+370,DO32845,PACA-AU,,ICGC_0013,male,deceased,,,81.0,81.0,,,C25.0,TNM,,,135.0,135.0,unknown,,unknown
+371,DO32841,PACA-AU,,ICGC_0011,male,alive,stable,,62.0,62.0,64.0,,C25.0,TNM,,,1680.0,1680.0,unknown,,unknown
+372,DO32857,PACA-AU,,ICGC_0019,female,deceased,progression,distant recurrence/metastasis,79.0,79.0,81.0,377.0,C25.0,TNM,,,858.0,858.0,unknown,,unknown
+373,DO32853,PACA-AU,,ICGC_0017,female,deceased,,,72.0,72.0,,,C25.0,TNM,,,111.0,111.0,unknown,,unknown
+374,DO32855,PACA-AU,,ICGC_0018,male,deceased,progression,distant recurrence/metastasis,64.0,64.0,,315.0,C25.1,TNM,,,345.0,345.0,unknown,,unknown
+375,DO32851,PACA-AU,,ICGC_0016,female,deceased,progression,distant recurrence/metastasis,84.0,84.0,,322.0,C25.0,TNM,T2NXMX,,456.0,456.0,unknown,,unknown
+376,DO32829,PACA-AU,,ICGC_0004,female,deceased,progression,distant recurrence/metastasis,78.0,78.0,80.0,,C25.0,TNM,T2N0MX,,1874.0,1874.0,unknown,,unknown
+377,DO32825,PACA-AU,,ICGC_0002,female,deceased,progression,local recurrence,77.0,77.0,84.0,1954.0,C25.0,TNM,,,2848.0,2848.0,unknown,,unknown
+378,DO32827,PACA-AU,,ICGC_0003,female,alive,stable,,58.0,58.0,61.0,,C25.0,TNM,,,1778.0,1778.0,unknown,,unknown
+379,DO32821,PACA-AU,,ICGC_0329,female,deceased,,,,77.0,,,,,,,,,unknown,,unknown
+380,DO32823,PACA-AU,,ICGC_0001,male,deceased,progression,local recurrence,59.0,59.0,61.0,388.0,C25.0,TNM,T3N0MX,,522.0,522.0,unknown,,unknown
+381,DO32839,PACA-AU,,ICGC_0010,male,deceased,stable,,55.0,55.0,,,C25.0,TNM,,,487.0,487.0,unknown,,unknown
+382,DO32835,PACA-AU,,ICGC_0008,male,deceased,progression,distant recurrence/metastasis,72.0,72.0,74.0,725.0,C25.0,TNM,,,1209.0,1209.0,unknown,,unknown
+383,DO32837,PACA-AU,PCAWG,ICGC_0009,male,deceased,progression,distant recurrence/metastasis,34.0,34.0,,115.0,C25.0,TNM,,,399.0,399.0,unknown,,unknown
+384,DO32831,PACA-AU,PCAWG,ICGC_0006,female,alive,stable,,49.0,49.0,51.0,519.0,C25.1,TNM,,,1715.0,1715.0,unknown,,unknown
+385,DO32833,PACA-AU,PCAWG,ICGC_0007,female,deceased,,,74.0,74.0,,,C25.0,TNM,T3N0MX,,56.0,56.0,unknown,,unknown
+386,DO33616,PACA-AU,,ICGC_0175,female,deceased,,,78.0,78.0,,,C25.0,TNM,,,132.0,132.0,unknown,,unknown
+387,DO34945,PACA-AU,,ICGC_0342,male,deceased,progression,local recurrence,68.0,68.0,,168.0,C25.0,TNM,,,189.0,189.0,unknown,,unknown
+388,DO33624,PACA-AU,,ICGC_0316,female,deceased,,,60.0,60.0,,,C25.0,TNM,,,82.0,82.0,unknown,,unknown
+389,DO34953,PACA-AU,,ICGC_0337,male,deceased,progression,distant recurrence/metastasis,45.0,45.0,,,C25.0,TNM,,,420.0,420.0,unknown,,unknown
+390,DO34929,PACA-AU,,ICGC_0336,female,deceased,,,72.0,72.0,,,C25.0,TNM,,,447.0,447.0,unknown,,unknown
+391,DO34921,PACA-AU,,ICGC_0320,female,deceased,progression,distant recurrence/metastasis,66.0,66.0,,125.0,C25.0,TNM,,,272.0,272.0,unknown,,unknown
+392,DO34937,PACA-AU,,ICGC_0113,male,deceased,progression,,50.0,50.0,,,C25.0,TNM,,,44.0,44.0,unknown,,unknown
+393,DO33608,PACA-AU,,ICGC_0170,female,alive,progression,distant recurrence/metastasis,68.0,68.0,,,C25.0,TNM,,,761.0,761.0,unknown,,unknown
+394,DO33600,PACA-AU,PCAWG,ICGC_0169,female,alive,progression,distant recurrence/metastasis,77.0,77.0,,,C25.0,TNM,,,854.0,854.0,unknown,,unknown
+395,DO34905,PACA-AU,PCAWG,ICGC_0321,male,alive,stable,,64.0,64.0,,,C25.0,TNM,,,1142.0,1142.0,unknown,,unknown
+396,DO34913,PACA-AU,,ICGC_0322,male,alive,progression,distant recurrence/metastasis,70.0,70.0,,,C25.0,TNM,,,794.0,794.0,unknown,,unknown
+397,DO33696,PACA-AU,,ICGC_0243,female,deceased,progression,,73.0,73.0,,,C25.0,TNM,,,937.0,937.0,unknown,,unknown
+398,DO33672,PACA-AU,,ICGC_0240,female,deceased,progression,local recurrence,75.0,75.0,,,C25.0,TNM,,,2423.0,2423.0,unknown,,unknown
+399,DO33688,PACA-AU,,ICGC_0242,female,deceased,progression,distant recurrence/metastasis,68.0,68.0,,,C25.0,TNM,,,394.0,394.0,unknown,,unknown
+400,DO33680,PACA-AU,,ICGC_0241,male,alive,stable,,80.0,80.0,,,C25.0,TNM,,,1477.0,1477.0,unknown,,unknown
+401,DO33656,PACA-AU,,ICGC_0098,female,deceased,progression,distant recurrence/metastasis,76.0,76.0,,106.0,C25.0,TNM,,,164.0,164.0,unknown,,unknown
+402,DO34985,PACA-AU,,ICGC_0343,female,deceased,progression,distant recurrence/metastasis,61.0,61.0,,,C25.0,TNM,,,994.0,994.0,unknown,,unknown
+403,DO33664,PACA-AU,,ICGC_0239,female,deceased,progression,local recurrence,70.0,70.0,,,C25.0,TNM,,,1352.0,1352.0,unknown,,unknown
+404,DO34993,PACA-AU,,ICGC_0344,male,deceased,progression,distant recurrence/metastasis,64.0,64.0,,38.0,C25.0,TNM,,,944.0,944.0,unknown,,unknown
+405,DO34969,PACA-AU,,ICGC_0339,male,deceased,progression,local recurrence,75.0,75.0,,348.0,C25.0,TNM,,,579.0,579.0,unknown,,unknown
+406,DO34961,PACA-AU,PCAWG,ICGC_0338,male,deceased,progression,distant recurrence/metastasis,71.0,71.0,,,C25.0,TNM,,,632.0,639.0,unknown,,unknown
+407,DO33632,PACA-AU,,ICGC_0072,male,deceased,progression,distant recurrence/metastasis,67.0,67.0,,808.0,C25.0,,,,1105.0,1105.0,unknown,,unknown
+408,DO34977,PACA-AU,,ICGC_0340,female,deceased,progression,distant recurrence/metastasis,78.0,78.0,,241.0,C25.0,TNM,,,307.0,307.0,unknown,,unknown
+409,DO33648,PACA-AU,,ICGC_0071,female,deceased,progression,distant recurrence/metastasis,72.0,72.0,,417.0,C25.0,TNM,,,517.0,517.0,unknown,,unknown
+410,DO33640,PACA-AU,,ICGC_0209,female,deceased,progression,distant recurrence/metastasis,68.0,68.0,,123.0,C25.0,TNM,,,523.0,523.0,unknown,,unknown
+411,DO33592,PACA-AU,,ICGC_0165,male,deceased,,,61.0,61.0,,,C25.0,TNM,,,,,unknown,,unknown
+412,DO34825,PACA-AU,,ICGC_0310,male,deceased,progression,distant recurrence/metastasis,64.0,64.0,,,C25.0,TNM,,,456.0,456.0,unknown,,unknown
+413,DO34833,PACA-AU,,ICGC_0311,male,alive,progression,distant recurrence/metastasis,78.0,78.0,,,C25.0,TNM,,,596.0,596.0,unknown,,unknown
+414,DO34809,PACA-AU,PCAWG,ICGC_0309,female,deceased,progression,distant recurrence/metastasis,74.0,74.0,,259.0,C25.0,TNM,,,297.0,297.0,unknown,,unknown
+415,DO34801,PACA-AU,PCAWG,ICGC_0295,male,alive,stable,,60.0,60.0,,,C25.0,TNM,,,626.0,626.0,unknown,,unknown
+416,DO34817,PACA-AU,PCAWG,ICGC_0300,female,alive,stable,,72.0,72.0,,,C25.0,TNM,,,540.0,540.0,unknown,,unknown
+417,DO33576,PACA-AU,,ICGC_0159,female,alive,stable,,43.0,43.0,,,C25.0,TNM,,,1170.0,1170.0,unknown,,unknown
+418,DO33584,PACA-AU,,ICGC_0164,female,deceased,progression,,55.0,55.0,,,C25.0,TNM,,,506.0,506.0,unknown,,unknown
+419,DO34889,PACA-AU,,ICGC_0317,male,deceased,progression,,90.0,90.0,,,C25.0,TNM,,,191.0,191.0,unknown,,unknown
+420,DO34881,PACA-AU,,ICGC_0136,male,alive,progression,distant recurrence/metastasis,71.0,71.0,,707.0,C25.0,TNM,,,1001.0,1001.0,unknown,,unknown
+421,DO33552,PACA-AU,PCAWG,ICGC_0149,female,alive,stable,,70.0,70.0,,182.0,C25.0,TNM,,,873.0,873.0,unknown,,unknown
+422,DO33568,PACA-AU,,ICGC_0094,female,deceased,progression,distant recurrence/metastasis,50.0,50.0,,,C25.0,TNM,,,233.0,233.0,unknown,,unknown
+423,DO34897,PACA-AU,,ICGC_0318,male,deceased,progression,distant recurrence/metastasis,77.0,77.0,,451.0,C25.0,TNM,,,664.0,664.0,unknown,,unknown
+424,DO33560,PACA-AU,,ICGC_0154,female,alive,progression,distant recurrence/metastasis,63.0,63.0,,,C25.0,TNM,,,936.0,936.0,unknown,,unknown
+425,DO33536,PACA-AU,,ICGC_0147,male,deceased,progression,distant recurrence/metastasis,71.0,71.0,,304.0,C25.0,TNM,,,482.0,482.0,unknown,,unknown
+426,DO34865,PACA-AU,,ICGC_0323,female,deceased,progression,local recurrence,45.0,45.0,,136.0,C25.0,TNM,,,363.0,363.0,unknown,,unknown
+427,DO34873,PACA-AU,,ICGC_0319,male,deceased,progression,distant recurrence/metastasis,64.0,64.0,,28.0,C25.0,TNM,,,578.0,578.0,unknown,,unknown
+428,DO33544,PACA-AU,PCAWG,ICGC_0153,female,deceased,progression,local recurrence,83.0,83.0,,,C25.0,TNM,,,412.0,412.0,unknown,,unknown
+429,DO34849,PACA-AU,PCAWG,ICGC_0326,female,deceased,progression,distant recurrence/metastasis,86.0,86.0,,173.0,C25.0,TNM,,,272.0,272.0,unknown,,unknown
+430,DO34841,PACA-AU,,ICGC_0324,male,deceased,progression,local recurrence,71.0,71.0,,,C25.0,TNM,,,506.0,506.0,unknown,,unknown
+431,DO33512,PACA-AU,PCAWG,ICGC_0114,female,deceased,,,,,,,C25.0,TNM,,,499.0,499.0,unknown,,unknown
+432,DO33528,PACA-AU,,ICGC_0119,male,deceased,progression,distant recurrence/metastasis,36.0,36.0,,304.0,C25.0,,,,343.0,343.0,unknown,,unknown
+433,DO34857,PACA-AU,,ICGC_0325,female,alive,stable,,67.0,67.0,,,C25.0,TNM,,,178.0,178.0,unknown,,unknown
+434,DO33520,PACA-AU,,ICGC_0125,female,deceased,progression,local recurrence,63.0,63.0,,152.0,C25.0,TNM,,,256.0,256.0,unknown,,unknown
+435,DO33904,PACA-AU,,ICGC_0269,female,deceased,progression,distant recurrence/metastasis,72.0,72.0,,,C25.0,TNM,,,1737.0,1737.0,unknown,,unknown
+436,DO33856,PACA-AU,,ICGC_0263,male,deceased,progression,distant recurrence/metastasis,46.0,46.0,,,C25.0,TNM,,,650.0,650.0,unknown,,unknown
+437,DO33864,PACA-AU,,ICGC_0264,female,deceased,progression,distant recurrence/metastasis,67.0,67.0,,,C25.0,TNM,,,890.0,890.0,unknown,,unknown
+438,DO33832,PACA-AU,,ICGC_0260,male,deceased,progression,distant recurrence/metastasis,60.0,60.0,,,C25.0,TNM,,,716.0,716.0,unknown,,unknown
+439,DO33848,PACA-AU,,ICGC_0262,male,deceased,progression,distant recurrence/metastasis,75.0,75.0,,,C25.0,TNM,,,151.0,151.0,unknown,,unknown
+440,DO33840,PACA-AU,,ICGC_0261,female,deceased,,,67.0,67.0,,,C25.0,TNM,,,211.0,211.0,unknown,,unknown
+441,DO33816,PACA-AU,,ICGC_0258,male,deceased,progression,distant recurrence/metastasis,62.0,62.0,,,C25.0,TNM,,,803.0,803.0,unknown,,unknown
+442,DO33824,PACA-AU,,ICGC_0259,male,deceased,progression,local recurrence,56.0,56.0,,,C25.0,TNM,,,274.0,274.0,unknown,,unknown
+443,DO33808,PACA-AU,,ICGC_0257,male,deceased,,,79.0,79.0,,,C25.0,TNM,,,14.0,14.0,unknown,,unknown
+444,DO33800,PACA-AU,,ICGC_0256,male,deceased,progression,local recurrence,69.0,69.0,,,C25.0,TNM,,,151.0,151.0,unknown,,unknown
+445,DO33896,PACA-AU,,ICGC_0268,male,deceased,,,60.0,60.0,,,C25.0,TNM,,,359.0,359.0,unknown,,unknown
+446,DO33872,PACA-AU,,ICGC_0265,male,deceased,progression,distant recurrence/metastasis,33.0,33.0,,,C25.0,TNM,,,1009.0,1009.0,unknown,,unknown
+447,DO33888,PACA-AU,,ICGC_0267,female,deceased,progression,distant recurrence/metastasis,75.0,75.0,,,C25.0,TNM,,,943.0,943.0,unknown,,unknown
+448,DO33880,PACA-AU,,ICGC_0266,female,deceased,progression,distant recurrence/metastasis,59.0,59.0,,,C25.0,TNM,,,159.0,159.0,unknown,,unknown
+449,DO33736,PACA-AU,,ICGC_0248,female,deceased,progression,distant recurrence/metastasis,66.0,66.0,,,C25.0,TNM,,,658.0,658.0,unknown,,unknown
+450,DO33744,PACA-AU,,ICGC_0249,male,deceased,progression,distant recurrence/metastasis,75.0,75.0,,,C25.0,TNM,,,554.0,554.0,unknown,,unknown
+451,DO33712,PACA-AU,,ICGC_0245,female,deceased,progression,local recurrence,67.0,67.0,,,C25.0,TNM,,,727.0,727.0,unknown,,unknown
+452,DO33728,PACA-AU,,ICGC_0247,male,deceased,progression,distant recurrence/metastasis,55.0,55.0,,,C25.0,TNM,,,1284.0,1284.0,unknown,,unknown
+453,DO33720,PACA-AU,,ICGC_0246,male,deceased,progression,distant recurrence/metastasis,65.0,65.0,,,C25.0,TNM,,,1169.0,1169.0,unknown,,unknown
+454,DO33704,PACA-AU,,ICGC_0244,male,deceased,progression,local recurrence,71.0,71.0,,,C25.0,TNM,,,153.0,153.0,unknown,,unknown
+455,DO33792,PACA-AU,,ICGC_0255,male,deceased,progression,distant recurrence/metastasis,64.0,64.0,,,C25.0,TNM,,,1112.0,1112.0,unknown,,unknown
+456,DO33776,PACA-AU,,ICGC_0253,female,deceased,progression,distant recurrence/metastasis,70.0,70.0,,,C25.0,TNM,,,167.0,167.0,unknown,,unknown
+457,DO33784,PACA-AU,,ICGC_0254,male,deceased,progression,distant recurrence/metastasis,48.0,48.0,,,C25.0,TNM,,,895.0,895.0,unknown,,unknown
+458,DO33752,PACA-AU,,ICGC_0250,male,deceased,progression,distant recurrence/metastasis,76.0,76.0,,,C25.0,TNM,,,624.0,624.0,unknown,,unknown
+459,DO33768,PACA-AU,,ICGC_0252,female,deceased,progression,distant recurrence/metastasis,65.0,65.0,,,C25.0,TNM,,,331.0,331.0,unknown,,unknown
+460,DO33760,PACA-AU,,ICGC_0251,female,deceased,progression,distant recurrence/metastasis,64.0,64.0,,,C25.0,TNM,,,648.0,648.0,unknown,,unknown
