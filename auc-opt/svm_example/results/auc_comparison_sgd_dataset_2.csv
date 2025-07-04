@@ -1,4 +1,0 @@
-Method,AUC
-Prox-SGD,0.9167
-PyTorch BCE,0.9795
-LibAUC PESG,0.9621
